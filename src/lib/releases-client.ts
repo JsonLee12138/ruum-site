@@ -268,6 +268,47 @@ export async function refreshLatestReleases(fallback: ReleasesPayload): Promise<
   }
 }
 
+const LATEST_TAG_CACHE_KEY = "ruum-latest-tag-v1";
+
+export async function refreshLatestStableTag(
+  repo = "JsonLee12138/Ruum",
+  fallbackTag = "",
+): Promise<string> {
+  if (typeof window === "undefined") return fallbackTag;
+
+  try {
+    const releasesRaw = sessionStorage.getItem(CACHE_KEY);
+    if (releasesRaw) {
+      const parsed = JSON.parse(releasesRaw) as { at: number; data: ReleasesPayload };
+      if (Date.now() - parsed.at < CACHE_TTL_MS && parsed.data?.stable?.tag) {
+        return parsed.data.stable.tag;
+      }
+    }
+
+    const cachedRaw = sessionStorage.getItem(LATEST_TAG_CACHE_KEY);
+    if (cachedRaw) {
+      const parsed = JSON.parse(cachedRaw) as { at: number; tag: string };
+      if (Date.now() - parsed.at < CACHE_TTL_MS && parsed.tag) {
+        return parsed.tag;
+      }
+    }
+
+    const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, {
+      headers: { Accept: "application/vnd.github+json" },
+    });
+    if (!res.ok) return fallbackTag;
+
+    const data = (await res.json()) as { tag_name?: string; draft?: boolean; prerelease?: boolean };
+    const tag = !data.draft && !data.prerelease && data.tag_name ? data.tag_name : fallbackTag;
+    if (tag) {
+      sessionStorage.setItem(LATEST_TAG_CACHE_KEY, JSON.stringify({ at: Date.now(), tag }));
+    }
+    return tag || fallbackTag;
+  } catch {
+    return fallbackTag;
+  }
+}
+
 export function parseChangelogMarkdown(
   markdown: string,
   repo = "JsonLee12138/Ruum",

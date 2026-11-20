@@ -33,6 +33,7 @@ const changelogHref = localePath(locale, 'changelog');
       </a>
       <a
         href={changelogHref}
+        data-latest-tag
         class="hidden sm:inline-flex items-center gap-1 rounded-[2px] border border-hairline bg-surface px-1.5 py-0.5 font-mono text-[11px] text-ink-secondary no-underline hover:border-strong transition-colors tabular-nums"
       >
         {latestTag}
@@ -210,6 +211,8 @@ const changelogHref = localePath(locale, 'changelog');
 </header>
 
 <script>
+  import { refreshLatestStableTag } from '../lib/releases-client';
+
   const btn = document.getElementById('theme-toggle-btn');
   const sun = document.getElementById('icon-sun');
   const moon = document.getElementById('icon-moon');
@@ -267,4 +270,15 @@ const changelogHref = localePath(locale, 'changelog');
       } catch {}
     });
   });
+
+  const tagElements = document.querySelectorAll<HTMLElement>('[data-latest-tag]');
+  if (tagElements.length > 0) {
+    const fallbackTag = tagElements[0].textContent?.trim() || '';
+    refreshLatestStableTag('JsonLee12138/Ruum', fallbackTag).then((liveTag) => {
+      if (!liveTag || liveTag === fallbackTag) return;
+      tagElements.forEach((el) => {
+        el.textContent = liveTag;
+      });
+    });
+  }
 </script>
