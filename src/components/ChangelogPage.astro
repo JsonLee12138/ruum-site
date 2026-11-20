@@ -1,0 +1,44 @@
+---
+import releasesData from '../data/releases.json';
+import { getCopy, type Locale } from '../i18n';
+import type { ChangelogEntry } from '../lib/releases-client';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import ChangelogList from './ChangelogList';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = getCopy(locale);
+const entries = (releasesData.changelog || []) as ChangelogEntry[];
+---
+
+<BaseLayout
+  locale={locale}
+  title={copy.meta.changelogTitle}
+  description={copy.meta.changelogDescription}
+  subpath="changelog"
+>
+  <Header locale={locale} subpath="changelog" />
+
+  <main class="drafting-grid min-h-[75vh]">
+    <div class="mx-auto max-w-[1000px] px-4 py-12 sm:px-6 sm:py-16 space-y-8">
+      <div class="max-w-[700px] space-y-2.5">
+        <span class="badge-mono text-amber">{copy.changelogPage.eyebrow}</span>
+        <h1 class="text-[32px] sm:text-[44px] font-bold tracking-[-0.025em] text-ink m-0">
+          {copy.changelogPage.title}
+        </h1>
+        <p class="text-[15px] sm:text-[16px] leading-relaxed text-ink-secondary m-0">
+          {copy.changelogPage.subtitle}
+        </p>
+      </div>
+
+      <ChangelogList client:load copy={copy.changelogPage} entries={entries} />
+    </div>
+  </main>
+
+  <Footer locale={locale} subpath="changelog" />
+</BaseLayout>

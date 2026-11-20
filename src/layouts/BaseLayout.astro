@@ -1,0 +1,178 @@
+---
+import '../styles/global.css';
+import '../styles/driver-theme.css';
+import releasesData from '../data/releases.json';
+import { LOCALES, getCopy, localePath, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  subpath?: string;
+}
+
+const { locale, title, description, subpath = '' } = Astro.props;
+const copy = getCopy(locale);
+const siteOrigin = (Astro.site?.toString() || 'https://ruum.jsonlee12138.com').replace(/\/$/, '');
+const canonicalUrl = `${siteOrigin}${localePath(locale, subpath)}`;
+const ogImageUrl = `${siteOrigin}/og-image.png`;
+const latestVersion = (releasesData.stable?.tag ?? 'v0.2.2').replace(/^v/, '');
+
+const OG_LOCALE_MAP: Record<Locale, string> = {
+  en: 'en_US',
+  zh: 'zh_CN',
+  ja: 'ja_JP',
+  ko: 'ko_KR',
+};
+
+const softwareJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'ruum',
+  alternateName: 'Ruum Disk Analyzer',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'macOS, Linux, Windows',
+  softwareVersion: latestVersion,
+  description,
+  url: siteOrigin,
+  downloadUrl: `${siteOrigin}${localePath(locale, 'download')}`,
+  license: 'https://www.gnu.org/licenses/gpl-3.0.html',
+  author: {
+    '@type': 'Person',
+    name: 'JsonLee12138',
+    url: 'https://github.com/JsonLee12138',
+  },
+  codeRepository: 'https://github.com/JsonLee12138/Ruum',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+};
+---
+
+<!doctype html>
+<html lang={copy.htmlLang} data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="ruum, disk space analyzer, treemap, GPUI, Rust, SSH disk analyzer, Docker cleanup, AI disk watchdog, MCP server, macOS, Linux, Windows"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#f5f2eb" />
+
+    {
+      LOCALES.map((loc) => (
+        <link rel="alternate" hreflang={loc} href={`${siteOrigin}${localePath(loc, subpath)}`} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={`${siteOrigin}${localePath('en', subpath)}`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ruum" />
+    <meta property="og:locale" content={OG_LOCALE_MAP[locale]} />
+    {
+      LOCALES.filter((loc) => loc !== locale).map((loc) => (
+        <meta property="og:locale:alternate" content={OG_LOCALE_MAP[loc]} />
+      ))
+    }
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ruum — GPUI treemap disk analyzer, Docker cleanup, SSH & AI MCP" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(softwareJsonLd)} />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fontsapi.zeoseven.com" crossorigin />
+
+    <script is:inline>
+      (function () {
+        try {
+          const saved = localStorage.getItem('ruum-theme');
+          const theme = saved === 'dark' || saved === 'light' ? saved : 'light';
+          document.documentElement.dataset.theme = theme;
+          const meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) {
+            meta.setAttribute('content', theme === 'dark' ? '#0a0c10' : '#f5f2eb');
+          }
+        } catch {}
+      })();
+    </script>
+  </head>
+  <body class="bg-canvas text-ink font-sans antialiased">
+    <div id="scroll-progress-bar" aria-hidden="true"></div>
+    <slot />
+
+    <script>
+      import Lenis from 'lenis';
+
+      const progressBar = document.getElementById('scroll-progress-bar');
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const updateProgress = (progress: number) => {
+        if (!progressBar) return;
+        const clamped = Math.max(0, Math.min(1, progress));
+        progressBar.style.transform = `scaleX(${clamped})`;
+      };
+
+      if (!prefersReduced) {
+        const lenis = new Lenis({
+          autoRaf: true,
+          lerp: 0.1,
+          anchors: { offset: -64 },
+          allowNestedScroll: true,
+          respectReducedMotion: true,
+        });
+
+        window.__lenis = lenis;
+        lenis.on('scroll', (inst) => {
+          updateProgress(inst.progress);
+        });
+      } else {
+        window.addEventListener(
+          'scroll',
+          () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            updateProgress(max > 0 ? window.scrollY / max : 0);
+          },
+          { passive: true },
+        );
+      }
+
+      const revealEls = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      if (prefersReduced || !('IntersectionObserver' in window)) {
+        revealEls.forEach((el) => {
+          el.dataset.reveal = 'visible';
+        });
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                (entry.target as HTMLElement).dataset.reveal = 'visible';
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.08, rootMargin: '0px 0px -32px 0px' },
+        );
+        revealEls.forEach((el) => observer.observe(el));
+      }
+    </script>
+  </body>
+</html>

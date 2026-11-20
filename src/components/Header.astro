@@ -1,0 +1,258 @@
+---
+import releasesData from '../data/releases.json';
+import { LOCALES, getCopy, localePath, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  subpath?: string;
+}
+
+const { locale, subpath = '' } = Astro.props;
+const copy = getCopy(locale);
+const latestTag = releasesData.stable?.tag ?? 'v0.2.2';
+const stars = releasesData.stars ?? 9;
+
+const homeUrl = localePath(locale);
+const capHref = subpath ? `${homeUrl}#capabilities` : '#capabilities';
+const safetyHref = subpath ? `${homeUrl}#safety` : '#safety';
+const downloadHref = localePath(locale, 'download');
+const changelogHref = localePath(locale, 'changelog');
+---
+
+<header
+  class="sticky top-0 z-50 h-14 border-b border-hairline bg-canvas/90 backdrop-blur-md"
+>
+  <div class="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 sm:px-6">
+    <div class="flex items-center gap-3">
+      <a
+        href={homeUrl}
+        class="inline-flex items-center gap-2.5 text-ink no-underline hover:opacity-90 transition-opacity"
+      >
+        <img src="/ruum.svg" alt="ruum logo" width="26" height="26" class="h-[26px] w-[26px] rounded-[4px]" />
+        <span class="text-[16px] font-bold tracking-[-0.02em]">ruum</span>
+      </a>
+      <a
+        href={changelogHref}
+        class="hidden sm:inline-flex items-center gap-1 rounded-[2px] border border-hairline bg-surface px-1.5 py-0.5 font-mono text-[11px] text-ink-secondary no-underline hover:border-strong transition-colors tabular-nums"
+      >
+        {latestTag}
+      </a>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-ink-secondary" aria-label="Main navigation">
+      <a
+        href={homeUrl}
+        class:list={[
+          'no-underline transition-colors',
+          subpath === '' ? 'text-amber font-semibold' : 'text-inherit hover:text-ink',
+        ]}
+      >
+        {copy.nav.home}
+      </a>
+      <a href={capHref} class="no-underline text-inherit hover:text-ink transition-colors">{copy.nav.capabilities}</a>
+      <a href={safetyHref} class="no-underline text-inherit hover:text-ink transition-colors">{copy.nav.safety}</a>
+      <a
+        href={downloadHref}
+        class:list={[
+          'no-underline transition-colors',
+          subpath === 'download' ? 'text-amber font-semibold' : 'text-inherit hover:text-ink',
+        ]}
+      >
+        {copy.nav.download}
+      </a>
+      <a
+        href={changelogHref}
+        class:list={[
+          'no-underline transition-colors',
+          subpath === 'changelog' ? 'text-amber font-semibold' : 'text-inherit hover:text-ink',
+        ]}
+      >
+        {copy.nav.changelog}
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <!-- Locale switcher -->
+      <div class="hidden sm:inline-flex items-center rounded-[2px] border border-hairline bg-surface p-0.5">
+        {
+          LOCALES.map((loc) => {
+            const locCopy = getCopy(loc);
+            const active = loc === locale;
+            return (
+              <a
+                href={localePath(loc, subpath)}
+                class:list={[
+                  'px-1.5 py-0.5 text-[11px] font-mono no-underline rounded-[1px] transition-colors',
+                  active
+                    ? 'bg-inset text-ink font-semibold'
+                    : 'text-ink-muted hover:text-ink',
+                ]}
+              >
+                {locCopy.localeLabel}
+              </a>
+            );
+          })
+        }
+      </div>
+
+      <!-- Theme toggle -->
+      <button
+        type="button"
+        id="theme-toggle-btn"
+        aria-label={copy.nav.themeToDark}
+        data-dark-label={copy.nav.themeToDark}
+        data-light-label={copy.nav.themeToLight}
+        class="inline-flex h-8 w-8 items-center justify-center rounded-[2px] border border-hairline bg-surface text-ink-secondary hover:border-strong hover:text-ink transition-colors cursor-pointer"
+      >
+        <svg id="icon-sun" class="hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+        <svg id="icon-moon" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+      </button>
+
+      <!-- GitHub link -->
+      <a
+        href="https://github.com/JsonLee12138/Ruum"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden lg:inline-flex h-8 items-center gap-1.5 rounded-[2px] border border-hairline bg-surface px-2.5 text-[12px] font-medium text-ink-secondary no-underline hover:border-strong hover:text-ink transition-colors"
+      >
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+        </svg>
+        <span class="font-mono text-[11px] tabular-nums">{stars}</span>
+      </a>
+
+      <!-- Install CTA -->
+      <a
+        href={downloadHref}
+        class="btn-primary h-8 px-3 text-[12px] no-underline"
+      >
+        {copy.nav.installCta}
+      </a>
+
+      <!-- Mobile menu toggle -->
+      <button
+        type="button"
+        id="mobile-menu-btn"
+        aria-label={copy.nav.menu}
+        aria-expanded="false"
+        class="inline-flex md:hidden h-8 w-8 items-center justify-center rounded-[2px] border border-hairline bg-surface text-ink cursor-pointer"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div
+    id="mobile-menu-drawer"
+    class="hidden md:hidden border-b border-hairline bg-surface px-4 py-4 space-y-3"
+  >
+    <div class="grid grid-cols-2 gap-2 text-[13px] font-medium">
+      <a
+        href={homeUrl}
+        class:list={[
+          'slab col-span-2 px-3 py-2 no-underline',
+          subpath === '' ? 'text-amber font-semibold' : 'text-ink',
+        ]}
+      >
+        {copy.nav.home}
+      </a>
+      <a href={capHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.capabilities}</a>
+      <a href={safetyHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.safety}</a>
+      <a href={downloadHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.download}</a>
+      <a href={changelogHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.changelog}</a>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-hairline">
+      <div class="inline-flex items-center rounded-[2px] border border-hairline bg-canvas p-0.5">
+        {
+          LOCALES.map((loc) => {
+            const locCopy = getCopy(loc);
+            return (
+              <a
+                href={localePath(loc, subpath)}
+                class:list={[
+                  'px-2 py-1 text-[11px] font-mono no-underline rounded-[1px]',
+                  loc === locale ? 'bg-inset text-ink font-semibold' : 'text-ink-muted',
+                ]}
+              >
+                {locCopy.localeLabel}
+              </a>
+            );
+          })
+        }
+      </div>
+      <a
+        href="https://github.com/JsonLee12138/Ruum"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[12px] font-mono text-ink-secondary no-underline"
+      >
+        GitHub ★ {stars}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('theme-toggle-btn');
+  const sun = document.getElementById('icon-sun');
+  const moon = document.getElementById('icon-moon');
+
+  function syncThemeIcons(theme: string) {
+    if (!sun || !moon || !btn) return;
+    if (theme === 'dark') {
+      sun.classList.remove('hidden');
+      moon.classList.add('hidden');
+      btn.setAttribute('aria-label', btn.getAttribute('data-light-label') || 'Switch theme');
+    } else {
+      sun.classList.add('hidden');
+      moon.classList.remove('hidden');
+      btn.setAttribute('aria-label', btn.getAttribute('data-dark-label') || 'Switch theme');
+    }
+  }
+
+  syncThemeIcons(document.documentElement.dataset.theme || 'light');
+
+  btn?.addEventListener('click', () => {
+    const current = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem('ruum-theme', next);
+    } catch {}
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute('content', next === 'dark' ? '#0a0c10' : '#f5f2eb');
+    }
+    syncThemeIcons(next);
+  });
+
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const drawer = document.getElementById('mobile-menu-drawer');
+  menuBtn?.addEventListener('click', () => {
+    if (!drawer) return;
+    const isHidden = drawer.classList.contains('hidden');
+    drawer.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(isHidden));
+  });
+  drawer?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      drawer.classList.add('hidden');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

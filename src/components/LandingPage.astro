@@ -1,0 +1,387 @@
+---
+import releasesData from '../data/releases.json';
+import { getCopy, localePath, type Locale } from '../i18n';
+import HeroSandbox from './HeroSandbox';
+import InstallBar from './InstallBar';
+import McpShowcase from './McpShowcase';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = getCopy(locale);
+const latestTag = releasesData.stable?.tag ?? 'v0.2.2';
+const downloadHref = localePath(locale, 'download');
+const changelogHref = localePath(locale, 'changelog');
+
+const CATEGORY_SWATCHES = [
+  { fill: 'var(--cat-code)', accent: 'var(--cat-code-accent)', hatch: false },
+  { fill: 'var(--cat-agent)', accent: 'var(--cat-agent-accent)', hatch: true },
+  { fill: 'var(--cat-toolchain)', accent: 'var(--cat-toolchain-accent)', hatch: true },
+  { fill: 'var(--cat-container)', accent: 'var(--cat-container-accent)', hatch: true },
+  { fill: 'var(--cat-synced)', accent: 'var(--cat-synced-accent)', hatch: false },
+  { fill: 'var(--cat-git)', accent: 'var(--cat-git-accent)', hatch: false },
+  { fill: 'var(--cat-media)', accent: 'var(--cat-media-accent)', hatch: false },
+  { fill: 'var(--cat-cache)', accent: 'var(--cat-cache-accent)', hatch: true },
+  { fill: 'var(--cat-docs)', accent: 'var(--cat-docs-accent)', hatch: false },
+  { fill: 'var(--cat-other)', accent: 'var(--cat-other-accent)', hatch: false },
+];
+---
+
+<BaseLayout
+  locale={locale}
+  title={copy.meta.homeTitle}
+  description={copy.meta.homeDescription}
+  subpath=""
+>
+  <Header locale={locale} subpath="" />
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="drafting-grid border-b border-hairline">
+      <div class="mx-auto max-w-[1200px] px-4 pt-12 pb-16 sm:px-6 sm:pt-16 sm:pb-20">
+        <div class="max-w-[820px] space-y-6">
+          <div class="inline-flex flex-wrap items-center gap-2 rounded-[2px] border border-hairline bg-surface px-2.5 py-1 font-mono text-[11.5px] text-ink-secondary">
+            <span class="font-semibold text-amber">{latestTag}</span>
+            <span class="text-ink-muted">·</span>
+            <span>{copy.hero.eyebrowPrefix}</span>
+            <span class="text-ink-muted">·</span>
+            <span>{copy.hero.eyebrowTech}</span>
+          </div>
+
+          <h1 class="text-[38px] sm:text-[54px] lg:text-[62px] font-bold tracking-[-0.03em] leading-[1.06] text-ink m-0">
+            <span class="block">{copy.hero.headlineLine1}</span>
+            <span class="block">{copy.hero.headlineLine2}</span>
+          </h1>
+
+          <p class="max-w-[680px] text-[16px] sm:text-[18px] leading-[1.6] text-ink-secondary m-0">
+            {copy.hero.subcopy}
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <a href={downloadHref} class="btn-primary px-5 py-2.5 text-[14px] no-underline">
+              {copy.hero.primaryCta}
+            </a>
+            <button
+              type="button"
+              id="hero-tour-trigger"
+              class="btn-secondary px-4 py-2.5 text-[14px]"
+            >
+              <span class="inline-block h-2 w-2 rounded-full bg-amber" aria-hidden="true" />
+              <span>{copy.hero.tourCta}</span>
+            </button>
+            <a
+              href="https://github.com/JsonLee12138/Ruum"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium text-ink-secondary no-underline hover:text-ink transition-colors"
+            >
+              <span>{copy.hero.secondaryCta}</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <p class="font-mono text-[11.5px] text-ink-muted m-0">{copy.hero.tourHint}</p>
+        </div>
+
+        <!-- OS Adaptive Install Bar -->
+        <div id="hero-install-bar" class="mt-8">
+          <InstallBar client:load copy={copy.installBar} downloadHref={downloadHref} />
+        </div>
+
+        <!-- Hero Interactive 4-Workspace Sandbox -->
+        <div class="mt-8">
+          <HeroSandbox client:load copy={copy.sandbox} />
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUR CORE CAPABILITIES -->
+    <section id="capabilities" class="border-b border-hairline bg-canvas">
+      <div class="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 sm:py-24 space-y-12">
+        <div class="max-w-[740px] space-y-3" data-reveal>
+          <span class="badge-mono text-amber">{copy.capabilities.sectionEyebrow}</span>
+          <h2 class="text-[28px] sm:text-[38px] font-bold tracking-[-0.025em] leading-[1.14] text-ink m-0">
+            {copy.capabilities.sectionTitle}
+          </h2>
+          <p class="text-[15px] sm:text-[16px] leading-relaxed text-ink-secondary m-0">
+            {copy.capabilities.sectionSubtitle}
+          </p>
+        </div>
+
+        <!-- Pillar 01: AI Intelligence & Native MCP (Full-width featured slab) -->
+        <article class="slab p-6 sm:p-8" data-reveal>
+          <div class="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+            <div class="space-y-3 min-w-0">
+              <span class="font-mono text-[11.5px] font-semibold text-amber uppercase tracking-wider">
+                {copy.capabilities.aiMcp.eyebrow}
+              </span>
+              <h3 class="text-[22px] sm:text-[26px] font-bold tracking-[-0.02em] text-ink m-0">
+                {copy.capabilities.aiMcp.title}
+              </h3>
+              <p class="text-[14.5px] leading-relaxed text-ink-secondary m-0">
+                {copy.capabilities.aiMcp.description}
+              </p>
+            </div>
+
+            <ul class="m-0 list-none p-0 space-y-2 border-l border-hairline pl-4 text-[13px] text-ink-secondary">
+              {
+                copy.capabilities.aiMcp.bullets.map((b) => (
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber" aria-hidden="true" />
+                    <span>{b}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <McpShowcase client:visible copy={copy.capabilities.aiMcp} />
+        </article>
+
+        <!-- Pillars 02 & 03: Remote SSH + Docker Space & Volume Safety -->
+        <div class="grid gap-6 lg:grid-cols-2">
+          <!-- Pillar 02: Remote SSH -->
+          <article class="slab p-6 sm:p-7 flex flex-col justify-between gap-6" data-reveal>
+            <div class="space-y-3 min-w-0">
+              <span class="font-mono text-[11.5px] font-semibold text-amber uppercase tracking-wider">
+                {copy.capabilities.ssh.eyebrow}
+              </span>
+              <h3 class="text-[20px] sm:text-[23px] font-bold tracking-[-0.02em] text-ink m-0">
+                {copy.capabilities.ssh.title}
+              </h3>
+              <p class="text-[14px] leading-relaxed text-ink-secondary m-0">
+                {copy.capabilities.ssh.description}
+              </p>
+              <ul class="m-0 list-none p-0 pt-1 space-y-1.5 text-[13px] text-ink-secondary">
+                {
+                  copy.capabilities.ssh.bullets.map((b) => (
+                    <li class="flex items-start gap-2">
+                      <span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber" aria-hidden="true" />
+                      <span>{b}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <div class="space-y-3 min-w-0">
+              <div class="border border-hairline bg-inset/60 rounded-[2px] divide-y divide-hairline">
+                {
+                  copy.capabilities.ssh.pipelineSteps.map((s) => (
+                    <div class="flex items-start gap-3 px-3 py-2.5 text-[12.5px]">
+                      <span class="font-mono text-[11px] font-semibold text-amber tabular-nums pt-0.5">{s.step}</span>
+                      <div>
+                        <div class="font-semibold text-ink">{s.title}</div>
+                        <div class="text-ink-secondary text-[12px]">{s.detail}</div>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+
+              <div class="border border-hairline bg-surface rounded-[2px] px-3 py-2.5 min-w-0 overflow-hidden">
+                <div class="font-mono text-[10.5px] text-ink-muted uppercase tracking-wider mb-1">
+                  {copy.capabilities.ssh.cmdLabel}
+                </div>
+                <code class="block max-w-full font-mono text-[12px] text-ink overflow-x-auto ruum-scroll whitespace-nowrap">
+                  ruum ssh user@server /var &nbsp;# &amp;&amp; --check for headless summary
+                </code>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pillar 03: Docker Space & Volume Safety -->
+          <article class="slab p-6 sm:p-7 flex flex-col justify-between gap-6" data-reveal>
+            <div class="space-y-3 min-w-0">
+              <span class="font-mono text-[11.5px] font-semibold text-amber uppercase tracking-wider">
+                {copy.capabilities.docker.eyebrow}
+              </span>
+              <h3 class="text-[20px] sm:text-[23px] font-bold tracking-[-0.02em] text-ink m-0">
+                {copy.capabilities.docker.title}
+              </h3>
+              <p class="text-[14px] leading-relaxed text-ink-secondary m-0">
+                {copy.capabilities.docker.description}
+              </p>
+              <ul class="m-0 list-none p-0 pt-1 space-y-1.5 text-[13px] text-ink-secondary">
+                {
+                  copy.capabilities.docker.bullets.map((b) => (
+                    <li class="flex items-start gap-2">
+                      <span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber" aria-hidden="true" />
+                      <span>{b}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {
+                copy.capabilities.docker.cardLabels.map((card, idx) => {
+                  const isLocked = idx === 3;
+                  return (
+                    <div
+                      class:list={[
+                        'rounded-[2px] border p-3 space-y-1.5',
+                        isLocked ? 'border-strong bg-inset/80' : 'border-hairline bg-canvas/60',
+                      ]}
+                    >
+                      <div class="flex items-center justify-between gap-1.5">
+                        <span class="text-[13px] font-semibold text-ink">{card.name}</span>
+                        <span
+                          class:list={[
+                            'rounded-[1px] px-1.5 py-0.5 font-mono text-[10px]',
+                            isLocked ? 'bg-amber-soft text-amber font-semibold' : 'bg-inset text-ink-secondary',
+                          ]}
+                        >
+                          {card.badge}
+                        </span>
+                      </div>
+                      <p class="text-[12px] text-ink-secondary m-0">{card.status}</p>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          </article>
+        </div>
+
+        <!-- Pillar 04: GPUI Native Visualization -->
+        <article class="slab p-6 sm:p-8" data-reveal>
+          <div class="grid gap-6 lg:grid-cols-[1.05fr_1fr] lg:items-center">
+            <div class="space-y-3 min-w-0">
+              <span class="font-mono text-[11.5px] font-semibold text-amber uppercase tracking-wider">
+                {copy.capabilities.visual.eyebrow}
+              </span>
+              <h3 class="text-[22px] sm:text-[26px] font-bold tracking-[-0.02em] text-ink m-0">
+                {copy.capabilities.visual.title}
+              </h3>
+              <p class="text-[14.5px] leading-relaxed text-ink-secondary m-0">
+                {copy.capabilities.visual.description}
+              </p>
+              <ul class="m-0 list-none p-0 pt-1 space-y-1.5 text-[13px] text-ink-secondary">
+                {
+                  copy.capabilities.visual.bullets.map((b) => (
+                    <li class="flex items-start gap-2">
+                      <span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber" aria-hidden="true" />
+                      <span>{b}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <div class="border border-hairline bg-inset/50 rounded-[2px] p-4 space-y-3">
+              <div class="flex items-center justify-between border-b border-hairline pb-2">
+                <span class="font-mono text-[11.5px] font-semibold text-ink">
+                  {copy.capabilities.visual.legendTitle}
+                </span>
+                <span class="font-mono text-[11px] text-ink-muted">10 categories</span>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                {
+                  copy.capabilities.visual.categories.map((catName, idx) => {
+                    const swatch = CATEGORY_SWATCHES[idx];
+                    return (
+                      <div class="border border-hairline rounded-[2px] bg-surface p-2 space-y-1.5">
+                        <div
+                          class="relative h-6 w-full rounded-[1px] border border-hairline overflow-hidden"
+                          style={`background-color: ${swatch.fill};`}
+                        >
+                          {swatch.hatch && <span class="reclaim-hatch absolute inset-0" aria-hidden="true" />}
+                          <span
+                            class="absolute left-0 top-0 bottom-0 w-1"
+                            style={`background-color: ${swatch.accent};`}
+                            aria-hidden="true"
+                          />
+                        </div>
+                        <div class="text-[11px] font-medium text-ink truncate">{catName}</div>
+                      </div>
+                    );
+                  })
+                }
+              </div>
+
+              <div class="flex items-center gap-2 pt-1 text-[11.5px] font-mono text-ink-secondary">
+                <span class="reclaim-hatch inline-block h-3.5 w-5 border border-strong bg-surface shrink-0" aria-hidden="true" />
+                <span>{copy.capabilities.visual.hatchCaption}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SAFETY & ENGINEERING GUARDRAILS -->
+    <section id="safety" class="border-b border-hairline bg-surface">
+      <div class="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 sm:py-24 space-y-10">
+        <div class="max-w-[720px] space-y-3" data-reveal>
+          <span class="badge-mono text-amber">{copy.safety.eyebrow}</span>
+          <h2 class="text-[28px] sm:text-[36px] font-bold tracking-[-0.025em] leading-[1.15] text-ink m-0">
+            {copy.safety.title}
+          </h2>
+          <p class="text-[15px] text-ink-secondary m-0">{copy.safety.subtitle}</p>
+        </div>
+
+        <div class="grid gap-px bg-hairline border border-hairline md:grid-cols-2 lg:grid-cols-3" data-reveal>
+          {
+            copy.safety.items.map((item) => (
+              <div class="bg-surface p-6 space-y-2">
+                <div class="font-mono text-[11px] font-semibold text-amber tracking-wider">{item.code}</div>
+                <h3 class="text-[16px] font-semibold text-ink m-0">{item.title}</h3>
+                <p class="text-[13.5px] leading-relaxed text-ink-secondary m-0">{item.detail}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL INSTALL BAND -->
+    <section id="install" class="drafting-grid bg-canvas">
+      <div class="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 sm:py-20 space-y-6" data-reveal>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div class="max-w-[660px] space-y-2.5">
+            <span class="badge-mono text-amber">{copy.installBand.eyebrow}</span>
+            <h2 class="text-[26px] sm:text-[34px] font-bold tracking-[-0.025em] leading-[1.15] text-ink m-0">
+              {copy.installBand.title}
+            </h2>
+            <p class="text-[15px] text-ink-secondary m-0">{copy.installBand.subtitle}</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <a href={downloadHref} class="btn-primary px-5 py-2.5 text-[13.5px] no-underline">
+              {copy.installBand.downloadPageBtn}
+            </a>
+            <a href={changelogHref} class="btn-secondary px-4 py-2.5 text-[13.5px] no-underline">
+              {copy.installBand.changelogBtn}
+            </a>
+          </div>
+        </div>
+
+        <InstallBar client:visible copy={copy.installBar} downloadHref={downloadHref} />
+      </div>
+    </section>
+  </main>
+
+  <Footer locale={locale} subpath="" />
+
+  <script>
+    const trigger = document.getElementById('hero-tour-trigger');
+    trigger?.addEventListener('click', () => {
+      const installBar = document.getElementById('hero-install-bar');
+      if (installBar) {
+        if (window.__lenis) {
+          window.__lenis.scrollTo(installBar as HTMLElement, { offset: -76, immediate: true });
+        } else {
+          installBar.scrollIntoView({ block: 'start' });
+        }
+      }
+      window.dispatchEvent(new CustomEvent('ruum:start-tour'));
+    });
+  </script>
+</BaseLayout>

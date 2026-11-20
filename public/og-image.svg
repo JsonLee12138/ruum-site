@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#DDD6C7" stroke-width="1"/>
+    </pattern>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#1A1917" stroke-opacity="0.16" stroke-width="2"/>
+    </pattern>
+    <linearGradient id="bgLogo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#151821"/>
+      <stop offset="100%" stop-color="#0A0C10"/>
+    </linearGradient>
+    <linearGradient id="titanium" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#DDE4F0"/>
+    </linearGradient>
+    <linearGradient id="amberCore" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#F5F2EB"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.55"/>
+
+  <!-- Outer architectural frame -->
+  <rect x="40" y="40" width="1120" height="550" fill="#FAF8F4" stroke="#B8AF9E" stroke-width="1.5"/>
+
+  <!-- Top bar -->
+  <line x1="40" y1="104" x2="1160" y2="104" stroke="#DDD6C7" stroke-width="1"/>
+  <g transform="translate(68, 52) scale(0.625)">
+    <rect x="2" y="2" width="60" height="60" rx="10" fill="url(#bgLogo)"/>
+    <rect x="12" y="12" width="40" height="40" fill="#0B0D13"/>
+    <rect x="13" y="13" width="38" height="38" fill="none" stroke="#5B657A" stroke-width="2"/>
+    <rect x="17" y="17" width="11" height="30" fill="url(#titanium)"/>
+    <rect x="31" y="17" width="16" height="11" fill="#949FB1"/>
+    <rect x="32" y="32" width="14" height="14" fill="none" stroke="url(#amberCore)" stroke-width="2"/>
+    <rect x="35" y="35" width="8" height="8" fill="url(#amberCore)"/>
+  </g>
+  <text x="122" y="80" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="700" fill="#1A1917" letter-spacing="-0.02em">ruum</text>
+  <text x="205" y="79" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#6B665E">RUST + GPUI · MACOS / LINUX / WINDOWS</text>
+
+  <!-- Left editorial copy -->
+  <text x="72" y="196" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="600" fill="#9A6B10" letter-spacing="0.08em">AI WATCHDOG · REMOTE SSH · DOCKER · TREEMAP</text>
+  <text x="72" y="272" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif" font-size="56" font-weight="700" fill="#1A1917" letter-spacing="-0.03em">Make room on</text>
+  <text x="72" y="338" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif" font-size="56" font-weight="700" fill="#1A1917" letter-spacing="-0.03em">every drive.</text>
+  <text x="72" y="402" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" fill="#5C5852">Visual treemap explorer, zero-sudo SSH diagnostics,</text>
+  <text x="72" y="434" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" fill="#5C5852">protected Docker cleanup, and human-gated AI MCP.</text>
+
+  <!-- Bottom meter preview -->
+  <rect x="72" y="484" width="540" height="58" fill="#ECE7DC" stroke="#DDD6C7" stroke-width="1"/>
+  <text x="90" y="510" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#5C5852">PROJECTED FREE SPACE AFTER REVIEW</text>
+  <rect x="90" y="520" width="504" height="10" fill="#DDD6C7"/>
+  <rect x="90" y="520" width="210" height="10" fill="#949FB1"/>
+  <rect x="300" y="520" width="136" height="10" fill="#D97706"/>
+
+  <!-- Right stylized treemap preview -->
+  <g transform="translate(656, 134)">
+    <rect x="0" y="0" width="468" height="416" fill="#ECE7DC" stroke="#B8AF9E" stroke-width="1"/>
+    <!-- Cache / Reclaimable -->
+    <rect x="8" y="8" width="220" height="250" fill="#E3D7BD" stroke="#9A6B10" stroke-width="2"/>
+    <rect x="8" y="8" width="220" height="250" fill="url(#hatch)"/>
+    <text x="20" y="34" font-family="ui-sans-serif, sans-serif" font-size="15" font-weight="600" fill="#1A1917">Library/Caches</text>
+    <text x="20" y="56" font-family="ui-monospace, monospace" font-size="13" fill="#734D08">15.0 GiB · Reclaimable</text>
+
+    <!-- Code -->
+    <rect x="234" y="8" width="226" height="148" fill="#CAD2DE" stroke="#B8AF9E" stroke-width="1"/>
+    <text x="246" y="34" font-family="ui-sans-serif, sans-serif" font-size="15" font-weight="600" fill="#1A1917">Projects</text>
+    <text x="246" y="56" font-family="ui-monospace, monospace" font-size="13" fill="#475569">54.0 GiB</text>
+
+    <!-- Docker / Container -->
+    <rect x="234" y="162" width="226" height="140" fill="#C4D8C5" stroke="#B8AF9E" stroke-width="1"/>
+    <rect x="234" y="162" width="226" height="140" fill="url(#hatch)"/>
+    <text x="246" y="188" font-family="ui-sans-serif, sans-serif" font-size="15" font-weight="600" fill="#1A1917">Docker / Build Cache</text>
+    <text x="246" y="210" font-family="ui-monospace, monospace" font-size="13" fill="#2F5E38">19.0 GiB · Reclaimable</text>
+
+    <!-- Toolchain -->
+    <rect x="8" y="264" width="220" height="144" fill="#C4DDD3" stroke="#B8AF9E" stroke-width="1"/>
+    <rect x="8" y="264" width="220" height="144" fill="url(#hatch)"/>
+    <text x="20" y="290" font-family="ui-sans-serif, sans-serif" font-size="15" font-weight="600" fill="#1A1917">pnpm / cargo / go</text>
+    <text x="20" y="312" font-family="ui-monospace, monospace" font-size="13" fill="#28594B">21.3 GiB · Rebuildable</text>
+
+    <!-- Agent scratch -->
+    <rect x="234" y="308" width="226" height="100" fill="#DFC9BD" stroke="#B8AF9E" stroke-width="1"/>
+    <text x="246" y="334" font-family="ui-sans-serif, sans-serif" font-size="15" font-weight="600" fill="#1A1917">.gemini / .codex</text>
+    <text x="246" y="356" font-family="ui-monospace, monospace" font-size="13" fill="#7C3A1D">18.9 GiB · Agent scratch</text>
+  </g>
+</svg>

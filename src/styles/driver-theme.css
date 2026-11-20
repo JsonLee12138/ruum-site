@@ -1,0 +1,110 @@
+@import "driver.js/dist/driver.css";
+
+/* Custom architectural skin for nilbuild/driver.js matching Ruum tokens */
+.driver-overlay {
+  opacity: 0.56 !important;
+}
+
+.driver-popover.ruum-driver-popover {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  box-shadow: var(--shadow-window);
+  padding: 16px 18px;
+  max-width: 340px;
+  font-family: inherit;
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-title {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  padding-right: 20px;
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-description {
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-progress-text {
+  font-family: "Maple Mono", "Maple Mono NF CN", ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-footer {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-navigation-btns {
+  gap: 6px;
+}
+
+.driver-popover.ruum-driver-popover button {
+  text-shadow: none;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-prev-btn {
+  background-color: var(--bg-inset);
+  color: var(--text-primary);
+  border: 1px solid var(--border-hairline);
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-prev-btn:hover {
+  border-color: var(--border-strong);
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-next-btn,
+.driver-popover.ruum-driver-popover .driver-popover-done-btn {
+  background-color: var(--accent-amber-fill);
+  color: var(--accent-on-amber);
+  border: 1px solid var(--accent-amber-fill);
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-next-btn:hover,
+.driver-popover.ruum-driver-popover .driver-popover-done-btn:hover {
+  background-color: var(--accent-amber-hover);
+  border-color: var(--accent-amber-hover);
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-close-btn {
+  color: var(--text-muted);
+  padding: 2px 6px;
+  top: 10px;
+  right: 10px;
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-close-btn:hover {
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.driver-popover.ruum-driver-popover .driver-popover-arrow-side-left.driver-popover-arrow {
+  border-left-color: var(--bg-surface);
+}
+.driver-popover.ruum-driver-popover .driver-popover-arrow-side-right.driver-popover-arrow {
+  border-right-color: var(--bg-surface);
+}
+.driver-popover.ruum-driver-popover .driver-popover-arrow-side-top.driver-popover-arrow {
+  border-top-color: var(--bg-surface);
+}
+.driver-popover.ruum-driver-popover .driver-popover-arrow-side-bottom.driver-popover-arrow {
+  border-bottom-color: var(--bg-surface);
+}

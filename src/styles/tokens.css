@@ -1,0 +1,133 @@
+/* Ruum Design Tokens — derived directly from crates/ruum-app/src/palette.rs & assets/ruum.svg */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Warm Architectural Drafting Paper */
+  --bg-canvas: #f5f2eb;
+  --bg-surface: #faf8f4;
+  --bg-elevated: #ffffff;
+  --bg-inset: #ece7dc;
+  --bg-rail: #efebe2;
+
+  --border-hairline: #ddd6c7;
+  --border-strong: #b8af9e;
+  --grid-line: rgba(184, 175, 158, 0.26);
+
+  --text-primary: #1a1917;
+  --text-secondary: #5c5852;
+  --text-muted: #7e786e;
+
+  /* Reserved Highlight: Warning Amber */
+  --accent-amber: #9a6b10;
+  --accent-amber-fill: #9a6b10;
+  --accent-amber-hover: #734d08;
+  --accent-amber-soft: rgba(154, 107, 16, 0.12);
+  --accent-amber-bar: #c98614;
+  --accent-on-amber: #faf8f4;
+
+  /* Reclaimable hatch & status */
+  --hatch-stroke: rgba(26, 25, 23, 0.16);
+  --status-safe: #2d6a4f;
+  --status-safe-soft: rgba(45, 106, 79, 0.11);
+  --status-warn: #9a6b10;
+  --status-danger: #9f2d2d;
+  --status-danger-soft: rgba(159, 45, 45, 0.1);
+
+  /* 10 Ruum Category Fills (muted mineral hues mixed toward --bg-inset) */
+  --cat-code: #cad2dd;
+  --cat-code-accent: #557095;
+  --cat-agent: #ddcac0;
+  --cat-agent-accent: #a65c3b;
+  --cat-toolchain: #c7dcd3;
+  --cat-toolchain-accent: #3d7d63;
+  --cat-container: #cbdac5;
+  --cat-container-accent: #4c7a3d;
+  --cat-synced: #c4d7de;
+  --cat-synced-accent: #3e7488;
+  --cat-git: #dfd0d4;
+  --cat-git-accent: #9a4d62;
+  --cat-media: #d3cde0;
+  --cat-media-accent: #6e5999;
+  --cat-cache: #dfd6be;
+  --cat-cache-accent: #9a7426;
+  --cat-docs: #dad8d2;
+  --cat-docs-accent: #6c6a64;
+  --cat-other: #e2dfd8;
+  --cat-other-accent: #827e76;
+
+  /* 5-step Age Fade Ramp (this week -> older) */
+  --age-0: #ccb78f;
+  --age-1: #d4c6a9;
+  --age-2: #dcd3c1;
+  --age-3: #e3ded3;
+  --age-4: #eae7df;
+
+  --shadow-window: 0 24px 64px -24px rgba(26, 25, 23, 0.14), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* C1 · Machined Monolith */
+  --bg-canvas: #0a0c10;
+  --bg-surface: #11141c;
+  --bg-elevated: #171b26;
+  --bg-inset: #151821;
+  --bg-rail: #0d1017;
+
+  --border-hairline: #222836;
+  --border-strong: #394256;
+  --grid-line: rgba(57, 66, 86, 0.25);
+
+  --text-primary: #f0f4f8;
+  --text-secondary: #a6b1c2;
+  --text-muted: #768399;
+
+  /* Watchdog Amber Core */
+  --accent-amber: #fbbf24;
+  --accent-amber-fill: #f59e0b;
+  --accent-amber-hover: #fbbf24;
+  --accent-amber-soft: rgba(251, 191, 36, 0.14);
+  --accent-amber-bar: #fbbf24;
+  --accent-on-amber: #0a0c10;
+
+  --hatch-stroke: rgba(248, 250, 252, 0.15);
+  --status-safe: #4ade80;
+  --status-safe-soft: rgba(74, 222, 128, 0.12);
+  --status-warn: #fbbf24;
+  --status-danger: #f87171;
+  --status-danger-soft: rgba(248, 113, 113, 0.12);
+
+  /* Dark mode Ruum Category Fills */
+  --cat-code: #27303d;
+  --cat-code-accent: #688ec2;
+  --cat-agent: #3b2b24;
+  --cat-agent-accent: #c9754d;
+  --cat-toolchain: #233830;
+  --cat-toolchain-accent: #4ca37f;
+  --cat-container: #273724;
+  --cat-container-accent: #68a354;
+  --cat-synced: #22343b;
+  --cat-synced-accent: #4f94ad;
+  --cat-git: #3a272d;
+  --cat-git-accent: #bd637d;
+  --cat-media: #2f2a3d;
+  --cat-media-accent: #8d74bf;
+  --cat-cache: #383022;
+  --cat-cache-accent: #c99a3b;
+  --cat-docs: #262930;
+  --cat-docs-accent: #89909e;
+  --cat-other: #1e222b;
+  --cat-other-accent: #697282;
+
+  /* 5-step Dark Age Fade Ramp */
+  --age-0: #463a21;
+  --age-1: #3a3222;
+  --age-2: #2e2a23;
+  --age-3: #242321;
+  --age-4: #1b1d23;
+
+  --shadow-window: 0 30px 80px -24px rgba(0, 0, 0, 0.65), 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+}

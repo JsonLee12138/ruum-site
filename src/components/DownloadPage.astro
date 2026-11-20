@@ -1,0 +1,44 @@
+---
+import releasesData from '../data/releases.json';
+import { getCopy, type Locale } from '../i18n';
+import type { ReleasesPayload } from '../lib/releases-client';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import DownloadCenter from './DownloadCenter';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = getCopy(locale);
+const payload = releasesData as ReleasesPayload;
+---
+
+<BaseLayout
+  locale={locale}
+  title={copy.meta.downloadTitle}
+  description={copy.meta.downloadDescription}
+  subpath="download"
+>
+  <Header locale={locale} subpath="download" />
+
+  <main class="drafting-grid min-h-[75vh]">
+    <div class="mx-auto max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16 space-y-8">
+      <div class="max-w-[760px] space-y-2.5">
+        <span class="badge-mono text-amber">{copy.downloadPage.eyebrow}</span>
+        <h1 class="text-[32px] sm:text-[44px] font-bold tracking-[-0.025em] text-ink m-0">
+          {copy.downloadPage.title}
+        </h1>
+        <p class="text-[15px] sm:text-[16px] leading-relaxed text-ink-secondary m-0">
+          {copy.downloadPage.subtitle}
+        </p>
+      </div>
+
+      <DownloadCenter client:load copy={copy.downloadPage} initialData={payload} />
+    </div>
+  </main>
+
+  <Footer locale={locale} subpath="download" />
+</BaseLayout>

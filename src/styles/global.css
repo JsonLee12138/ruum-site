@@ -1,0 +1,111 @@
+@import "./tokens.css";
+
+@layer base {
+  html {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family:
+      "Maple Mono", "Maple Mono NF CN", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "PingFang SC", "Hiragino Sans", "Noto Sans JP", "Noto Sans KR", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease;
+  }
+
+  ::selection {
+    background-color: var(--accent-amber-soft);
+    color: var(--text-primary);
+  }
+}
+
+/* 45-degree diagonal hatch pattern indicating reclaimable space */
+.reclaim-hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 5px,
+    var(--hatch-stroke) 5px,
+    var(--hatch-stroke) 6.5px
+  );
+}
+
+/* Subtle architectural drafting grid backdrop */
+.drafting-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Top scroll progress bar driven by Lenis */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--accent-amber-bar);
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  z-index: 90;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Subtle architectural scroll reveal */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal="visible"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom slim scrollbars inside sandbox & code blocks */
+.ruum-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.ruum-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ruum-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  body {
+    transition: none;
+  }
+
+  #scroll-progress-bar {
+    display: none;
+  }
+}
