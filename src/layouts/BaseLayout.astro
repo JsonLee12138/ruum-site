@@ -113,6 +113,52 @@ const softwareJsonLd = {
         } catch {}
       })();
     </script>
+
+    {
+      locale === 'en' && (
+        <script is:inline define:vars={{ supportedLocales: LOCALES }}>
+          (function () {
+            try {
+              if (navigator.webdriver) return;
+              var saved = localStorage.getItem('ruum-locale');
+              if (saved === 'en') return;
+
+              var target = null;
+              if (saved && supportedLocales.indexOf(saved) !== -1) {
+                target = saved;
+              } else {
+                var langs =
+                  Array.isArray(navigator.languages) && navigator.languages.length
+                    ? navigator.languages
+                    : navigator.language
+                      ? [navigator.language]
+                      : [];
+                for (var i = 0; i < langs.length; i++) {
+                  var primary = String(langs[i] || '')
+                    .toLowerCase()
+                    .split(/[-_]/)[0];
+                  if (supportedLocales.indexOf(primary) !== -1) {
+                    target = primary;
+                    break;
+                  }
+                }
+              }
+
+              if (target && target !== 'en') {
+                var clean = window.location.pathname
+                  .replace(/\/index\.html$/, '')
+                  .replace(/^\/+/, '')
+                  .replace(/\/+$/, '');
+                var nextPath = clean ? '/' + target + '/' + clean + '/' : '/' + target + '/';
+                window.location.replace(
+                  nextPath + window.location.search + window.location.hash,
+                );
+              }
+            } catch {}
+          })();
+        </script>
+      )
+    }
   </head>
   <body class="bg-canvas text-ink font-sans antialiased">
     <div id="scroll-progress-bar" aria-hidden="true"></div>

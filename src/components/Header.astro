@@ -81,6 +81,7 @@ const changelogHref = localePath(locale, 'changelog');
             return (
               <a
                 href={localePath(loc, subpath)}
+                data-locale-choice={loc}
                 class:list={[
                   'px-1.5 py-0.5 text-[11px] font-mono no-underline rounded-[1px] transition-colors',
                   active
@@ -184,6 +185,7 @@ const changelogHref = localePath(locale, 'changelog');
             return (
               <a
                 href={localePath(loc, subpath)}
+                data-locale-choice={loc}
                 class:list={[
                   'px-2 py-1 text-[11px] font-mono no-underline rounded-[1px]',
                   loc === locale ? 'bg-inset text-ink font-semibold' : 'text-ink-muted',
@@ -253,6 +255,16 @@ const changelogHref = localePath(locale, 'changelog');
     link.addEventListener('click', () => {
       drawer.classList.add('hidden');
       menuBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.querySelectorAll<HTMLAnchorElement>('a[data-locale-choice]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const nextLocale = link.dataset.localeChoice;
+      if (!nextLocale) return;
+      try {
+        localStorage.setItem('ruum-locale', nextLocale);
+      } catch {}
     });
   });
 </script>
