@@ -1,0 +1,227 @@
+---
+import { getCopy, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  variant?: 'section' | 'compact';
+}
+
+const { locale, variant = 'section' } = Astro.props;
+const copy = getCopy(locale);
+const isZh = locale === 'zh';
+
+const KOFI_URL =
+  'https://ko-fi.com/post/Tired-of-Disk-Almost-Full-Meet-ruum-A-Lightwe-H5R12AZHO7#checkoutModal';
+
+const COFFEE_ICON_PATHS = [
+  'M10 2v2',
+  'M14 2v2',
+  'M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1',
+  'M6 2v2',
+];
+---
+
+{
+  variant === 'section' ? (
+    <section id="support" class="scroll-mt-14 border-t border-hairline bg-surface">
+      <div class="mx-auto max-w-[1200px] px-4 py-14 sm:px-6 sm:py-16" data-reveal>
+        <div class="slab p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div class="max-w-[640px] space-y-2.5 min-w-0">
+            <span class="badge-mono text-amber">{copy.support.eyebrow}</span>
+            <h2 class="text-[24px] sm:text-[30px] font-bold tracking-[-0.02em] leading-[1.18] text-ink m-0">
+              {copy.support.title}
+            </h2>
+            <p class="text-[14.5px] sm:text-[15px] leading-relaxed text-ink-secondary m-0">
+              {copy.support.description}
+            </p>
+            <p class="font-mono text-[11.5px] text-ink-muted m-0 pt-0.5">
+              {isZh ? copy.support.wechatHint : copy.support.kofiNote}
+            </p>
+          </div>
+
+          {isZh ? (
+            <div class="shrink-0 self-start md:self-center flex flex-col items-center gap-2">
+              <div class="rounded-[2px] border border-hairline bg-[#faf8f4] p-2.5">
+                <img
+                  src="/wechat-reward.jpg"
+                  alt={copy.support.wechatAlt}
+                  width="168"
+                  height="168"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-[168px] w-[168px] object-contain block"
+                />
+              </div>
+              <span class="text-center font-mono text-[11px] text-ink-muted">
+                {copy.support.wechatTrigger}
+              </span>
+            </div>
+          ) : (
+            <a
+              href={KOFI_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary px-5 py-2.5 text-[13.5px] no-underline shrink-0 self-start md:self-center"
+            >
+              <svg
+                class="h-4 w-4 shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                {COFFEE_ICON_PATHS.map((d) => (
+                  <path d={d} />
+                ))}
+              </svg>
+              <span>{copy.support.kofiCta}</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </section>
+  ) : (
+    <>
+      <aside
+        aria-labelledby="support-compact-title"
+        class="slab p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+      >
+        <div class="space-y-1.5 min-w-0">
+          <span class="badge-mono text-amber">{copy.support.eyebrow}</span>
+          <h2 id="support-compact-title" class="text-[16px] font-bold tracking-tight text-ink m-0">
+            {copy.support.title}
+          </h2>
+          <p class="text-[13px] text-ink-secondary m-0">{copy.support.description}</p>
+        </div>
+
+        {isZh ? (
+          <button
+            type="button"
+            data-wechat-modal-open
+            class="btn-secondary px-4 py-2 text-[13px] shrink-0 self-start sm:self-center"
+          >
+            <svg
+              class="h-4 w-4 shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              {COFFEE_ICON_PATHS.map((d) => (
+                <path d={d} />
+              ))}
+            </svg>
+            <span>{copy.support.wechatTrigger}</span>
+          </button>
+        ) : (
+          <a
+            href={KOFI_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-secondary px-4 py-2 text-[13px] no-underline shrink-0 self-start sm:self-center"
+          >
+            <svg
+              class="h-4 w-4 shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              {COFFEE_ICON_PATHS.map((d) => (
+                <path d={d} />
+              ))}
+            </svg>
+            <span>{copy.support.kofiCta}</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </aside>
+
+      {isZh && (
+        <dialog
+          data-wechat-dialog
+          aria-labelledby="wechat-dialog-title"
+          class="m-auto rounded-[2px] border border-strong bg-surface p-0 text-ink shadow-2xl backdrop:bg-black/60 max-w-[340px] w-[calc(100%-2rem)]"
+        >
+          <div class="flex items-center justify-between gap-3 border-b border-hairline px-4 py-3">
+            <h3 id="wechat-dialog-title" class="text-[14px] font-bold tracking-tight text-ink m-0">
+              {copy.support.wechatModalTitle}
+            </h3>
+            <button
+              type="button"
+              data-wechat-modal-close
+              aria-label={copy.support.closeLabel}
+              class="inline-flex h-7 w-7 items-center justify-center rounded-[2px] border border-hairline bg-canvas text-ink-secondary hover:border-strong hover:text-ink transition-colors cursor-pointer"
+            >
+              <svg
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="p-5 flex flex-col items-center gap-3 text-center">
+            <div class="inline-block rounded-[2px] border border-hairline bg-[#faf8f4] p-3">
+              <img
+                src="/wechat-reward.jpg"
+                alt={copy.support.wechatAlt}
+                width="240"
+                height="240"
+                class="h-[240px] w-[240px] object-contain block"
+              />
+            </div>
+            <p class="font-mono text-[11.5px] leading-relaxed text-ink-muted m-0">
+              {copy.support.wechatHint}
+            </p>
+          </div>
+        </dialog>
+      )}
+    </>
+  )
+}
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('[data-wechat-dialog]');
+  if (dialog) {
+    const openBtns = document.querySelectorAll<HTMLButtonElement>('[data-wechat-modal-open]');
+    const closeBtns = dialog.querySelectorAll<HTMLButtonElement>('[data-wechat-modal-close]');
+
+    openBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!dialog.open) {
+          dialog.showModal();
+        }
+      });
+    });
+
+    closeBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        dialog.close();
+      });
+    });
+
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) {
+        dialog.close();
+      }
+    });
+  }
+</script>

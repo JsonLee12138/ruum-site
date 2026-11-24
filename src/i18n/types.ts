@@ -36,6 +36,7 @@ export interface SiteCopy {
     safety: string;
     download: string;
     changelog: string;
+    support: string;
     installCta: string;
     themeToDark: string;
     themeToLight: string;
@@ -210,13 +211,34 @@ export interface SiteCopy {
     downloadPageBtn: string;
     changelogBtn: string;
   };
+  support: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    kofiCta: string;
+    kofiNote: string;
+    wechatTrigger: string;
+    wechatModalTitle: string;
+    wechatHint: string;
+    wechatAlt: string;
+    closeLabel: string;
+  };
   downloadPage: {
     eyebrow: string;
     title: string;
     subtitle: string;
     channelStable: string;
     channelBeta: string;
-    recommendedBadge: string;
+    recommendedForPrefix: string;
+    archAppleSilicon: string;
+    archIntel: string;
+    archArm64: string;
+    archX64: string;
+    otherFormatsLabel: string;
+    matchedCommandHeading: string;
+    showAllOptions: string;
+    hideAllOptions: string;
+    otherPlatformsHint: string;
     latestTagLabel: string;
     publishedLabel: string;
     quickInstallHeading: string;
@@ -258,12 +280,17 @@ export interface SiteCopy {
     etymologyTitle: string;
     etymologyBody: string;
     license: string;
+    groups: {
+      product: string;
+      community: string;
+    };
     links: {
       github: string;
       releases: string;
       issues: string;
       download: string;
       changelog: string;
+      support: string;
     };
   };
 }

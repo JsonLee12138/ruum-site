@@ -8,76 +8,105 @@ interface Props {
 
 const { locale, subpath = '' } = Astro.props;
 const copy = getCopy(locale);
+
+const homeUrl = localePath(locale);
+const capHref = subpath ? `${homeUrl}#capabilities` : '#capabilities';
+const safetyHref = subpath ? `${homeUrl}#safety` : '#safety';
+const supportHref = subpath ? `${homeUrl}#support` : '#support';
+
+const productLinks = [
+  { label: copy.nav.capabilities, href: capHref },
+  { label: copy.nav.safety, href: safetyHref },
+  { label: copy.footer.links.download, href: localePath(locale, 'download') },
+  { label: copy.footer.links.changelog, href: localePath(locale, 'changelog') },
+];
+
+const communityLinks = [
+  { label: copy.footer.links.github, href: 'https://github.com/JsonLee12138/Ruum', external: true },
+  { label: copy.footer.links.releases, href: 'https://github.com/JsonLee12138/Ruum/releases', external: true },
+  { label: copy.footer.links.issues, href: 'https://github.com/JsonLee12138/Ruum/issues', external: true },
+  { label: copy.footer.links.support, href: supportHref, external: false },
+];
 ---
 
 <footer class="border-t border-hairline bg-surface">
   <div class="mx-auto max-w-[1200px] px-4 py-12 sm:px-6">
-    <div class="grid gap-8 md:grid-cols-[1.4fr_1fr]">
+    <div class="grid gap-10 md:grid-cols-[1.35fr_1fr]">
       <div class="space-y-3">
         <div class="flex items-center gap-2.5">
           <img src="/ruum.svg" alt="ruum mark" width="22" height="22" class="h-[22px] w-[22px] rounded-[3px]" />
           <span class="text-[14px] font-semibold tracking-tight text-ink">{copy.footer.etymologyTitle}</span>
         </div>
-        <p class="max-w-[540px] text-[13px] leading-relaxed text-ink-secondary">
+        <p class="max-w-[460px] text-[13px] leading-relaxed text-ink-secondary m-0">
           {copy.footer.etymologyBody}
         </p>
-        <p class="font-mono text-[11px] text-ink-muted">{copy.footer.license}</p>
       </div>
 
-      <div class="flex flex-col justify-between gap-6 md:items-end">
-        <div class="flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-ink-secondary">
-          <a href={localePath(locale, 'download')} class="no-underline text-inherit hover:text-ink transition-colors">
-            {copy.footer.links.download}
-          </a>
-          <a href={localePath(locale, 'changelog')} class="no-underline text-inherit hover:text-ink transition-colors">
-            {copy.footer.links.changelog}
-          </a>
-          <a
-            href="https://github.com/JsonLee12138/Ruum"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="no-underline text-inherit hover:text-ink transition-colors"
-          >
-            {copy.footer.links.github}
-          </a>
-          <a
-            href="https://github.com/JsonLee12138/Ruum/releases"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="no-underline text-inherit hover:text-ink transition-colors"
-          >
-            {copy.footer.links.releases}
-          </a>
-          <a
-            href="https://github.com/JsonLee12138/Ruum/issues"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="no-underline text-inherit hover:text-ink transition-colors"
-          >
-            {copy.footer.links.issues}
-          </a>
-        </div>
+      <div class="grid grid-cols-2 gap-8 sm:gap-12">
+        <nav aria-label={copy.footer.groups.product}>
+          <h3 class="text-[12px] font-semibold uppercase tracking-[0.06em] text-ink m-0 mb-3">
+            {copy.footer.groups.product}
+          </h3>
+          <ul class="m-0 list-none p-0 space-y-2.5 text-[13px] text-ink-secondary">
+            {
+              productLinks.map((item) => (
+                <li>
+                  <a href={item.href} class="no-underline text-inherit hover:text-ink transition-colors">
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
 
-        <div class="flex items-center gap-2">
-          {
-            LOCALES.map((loc) => {
-              const locCopy = getCopy(loc);
-              return (
-                <a
-                  href={localePath(loc, subpath)}
-                  class:list={[
-                    'rounded-[2px] border px-2 py-0.5 font-mono text-[11px] no-underline transition-colors',
-                    loc === locale
-                      ? 'border-strong bg-inset text-ink font-semibold'
-                      : 'border-hairline bg-canvas text-ink-muted hover:text-ink',
-                  ]}
-                >
-                  {locCopy.localeLabel}
-                </a>
-              );
-            })
-          }
-        </div>
+        <nav aria-label={copy.footer.groups.community}>
+          <h3 class="text-[12px] font-semibold uppercase tracking-[0.06em] text-ink m-0 mb-3">
+            {copy.footer.groups.community}
+          </h3>
+          <ul class="m-0 list-none p-0 space-y-2.5 text-[13px] text-ink-secondary">
+            {
+              communityLinks.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noopener noreferrer' : undefined}
+                    class="no-underline text-inherit hover:text-ink transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-hairline flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <p class="font-mono text-[11.5px] text-ink-muted m-0">{copy.footer.license}</p>
+
+      <div class="flex items-center gap-2">
+        {
+          LOCALES.map((loc) => {
+            const locCopy = getCopy(loc);
+            return (
+              <a
+                href={localePath(loc, subpath)}
+                data-locale-choice={loc}
+                class:list={[
+                  'rounded-[2px] border px-2 py-0.5 font-mono text-[11px] no-underline transition-colors',
+                  loc === locale
+                    ? 'border-strong bg-inset text-ink font-semibold'
+                    : 'border-hairline bg-canvas text-ink-muted hover:text-ink',
+                ]}
+              >
+                {locCopy.localeLabel}
+              </a>
+            );
+          })
+        }
       </div>
     </div>
   </div>

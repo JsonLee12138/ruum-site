@@ -6,6 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import DownloadCenter from './DownloadCenter';
+import SupportSection from './SupportSection.astro';
 
 interface Props {
   locale: Locale;
@@ -37,6 +38,8 @@ const payload = releasesData as ReleasesPayload;
       </div>
 
       <DownloadCenter client:load copy={copy.downloadPage} initialData={payload} />
+
+      <SupportSection locale={locale} variant="compact" />
     </div>
   </main>
 

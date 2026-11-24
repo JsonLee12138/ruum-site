@@ -15,6 +15,7 @@ const stars = releasesData.stars ?? 9;
 const homeUrl = localePath(locale);
 const capHref = subpath ? `${homeUrl}#capabilities` : '#capabilities';
 const safetyHref = subpath ? `${homeUrl}#safety` : '#safety';
+const supportHref = subpath ? `${homeUrl}#support` : '#support';
 const downloadHref = localePath(locale, 'download');
 const changelogHref = localePath(locale, 'changelog');
 ---
@@ -40,22 +41,22 @@ const changelogHref = localePath(locale, 'changelog');
       </a>
     </div>
 
-    <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-ink-secondary" aria-label="Main navigation">
+    <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[13px] font-medium text-ink-secondary" aria-label="Main navigation">
       <a
         href={homeUrl}
         class:list={[
-          'no-underline transition-colors',
+          'no-underline transition-colors whitespace-nowrap',
           subpath === '' ? 'text-amber font-semibold' : 'text-inherit hover:text-ink',
         ]}
       >
         {copy.nav.home}
       </a>
-      <a href={capHref} class="no-underline text-inherit hover:text-ink transition-colors">{copy.nav.capabilities}</a>
-      <a href={safetyHref} class="no-underline text-inherit hover:text-ink transition-colors">{copy.nav.safety}</a>
+      <a href={capHref} class="no-underline text-inherit hover:text-ink transition-colors whitespace-nowrap">{copy.nav.capabilities}</a>
+      <a href={safetyHref} class="no-underline text-inherit hover:text-ink transition-colors whitespace-nowrap">{copy.nav.safety}</a>
       <a
         href={downloadHref}
         class:list={[
-          'no-underline transition-colors',
+          'no-underline transition-colors whitespace-nowrap',
           subpath === 'download' ? 'text-amber font-semibold' : 'text-inherit hover:text-ink',
         ]}
       >
@@ -64,12 +65,13 @@ const changelogHref = localePath(locale, 'changelog');
       <a
         href={changelogHref}
         class:list={[
-          'no-underline transition-colors',
+          'no-underline transition-colors whitespace-nowrap',
           subpath === 'changelog' ? 'text-amber font-semibold' : 'text-inherit hover:text-ink',
         ]}
       >
         {copy.nav.changelog}
       </a>
+      <a href={supportHref} class="no-underline text-inherit hover:text-ink transition-colors whitespace-nowrap">{copy.nav.support}</a>
     </nav>
 
     <div class="flex items-center gap-2">
@@ -149,7 +151,7 @@ const changelogHref = localePath(locale, 'changelog');
         id="mobile-menu-btn"
         aria-label={copy.nav.menu}
         aria-expanded="false"
-        class="inline-flex md:hidden h-8 w-8 items-center justify-center rounded-[2px] border border-hairline bg-surface text-ink cursor-pointer"
+        class="inline-flex lg:hidden h-8 w-8 items-center justify-center rounded-[2px] border border-hairline bg-surface text-ink cursor-pointer"
       >
         <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M4 7h16M4 12h16M4 17h16" />
@@ -161,13 +163,13 @@ const changelogHref = localePath(locale, 'changelog');
   <!-- Mobile drawer -->
   <div
     id="mobile-menu-drawer"
-    class="hidden md:hidden border-b border-hairline bg-surface px-4 py-4 space-y-3"
+    class="hidden lg:hidden border-b border-hairline bg-surface px-4 py-4 space-y-3"
   >
     <div class="grid grid-cols-2 gap-2 text-[13px] font-medium">
       <a
         href={homeUrl}
         class:list={[
-          'slab col-span-2 px-3 py-2 no-underline',
+          'slab px-3 py-2 no-underline',
           subpath === '' ? 'text-amber font-semibold' : 'text-ink',
         ]}
       >
@@ -177,6 +179,7 @@ const changelogHref = localePath(locale, 'changelog');
       <a href={safetyHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.safety}</a>
       <a href={downloadHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.download}</a>
       <a href={changelogHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.changelog}</a>
+      <a href={supportHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.support}</a>
     </div>
     <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-hairline">
       <div class="inline-flex items-center rounded-[2px] border border-hairline bg-canvas p-0.5">

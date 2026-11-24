@@ -7,6 +7,7 @@ import McpShowcase from './McpShowcase';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+import SupportSection from './SupportSection.astro';
 
 interface Props {
   locale: Locale;
@@ -366,6 +367,8 @@ const CATEGORY_SWATCHES = [
         <InstallBar client:visible copy={copy.installBar} downloadHref={downloadHref} />
       </div>
     </section>
+
+    <SupportSection locale={locale} variant="section" />
   </main>
 
   <Footer locale={locale} subpath="" />
