@@ -16,6 +16,7 @@ const copy = getCopy(locale);
 const siteOrigin = (Astro.site?.toString() || 'https://ruum.jsonlee12138.com').replace(/\/$/, '');
 const canonicalUrl = `${siteOrigin}${localePath(locale, subpath)}`;
 const ogImageUrl = `${siteOrigin}/og-image.png`;
+const screenshotUrl = `${siteOrigin}/screenshot.png`;
 const latestVersion = (releasesData.stable?.tag ?? 'v0.2.2').replace(/^v/, '');
 
 const OG_LOCALE_MAP: Record<Locale, string> = {
@@ -25,29 +26,50 @@ const OG_LOCALE_MAP: Record<Locale, string> = {
   ko: 'ko_KR',
 };
 
+const websiteJsonLd = {
+  '@type': 'WebSite',
+  '@id': `${siteOrigin}/#website`,
+  name: 'Ruum',
+  alternateName: ['ruum', 'Ruum Disk Space Analyzer'],
+  url: siteOrigin,
+  inLanguage: copy.htmlLang,
+};
+
 const softwareJsonLd = {
-  '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'ruum',
-  alternateName: 'Ruum Disk Analyzer',
+  '@id': `${siteOrigin}/#software`,
+  name: 'Ruum',
+  alternateName: copy.meta.alternateNames,
   applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'macOS, Linux, Windows',
+  applicationSubCategory: copy.meta.applicationSubCategory,
+  operatingSystem: 'macOS, Windows, Linux',
   softwareVersion: latestVersion,
+  inLanguage: copy.htmlLang,
   description,
   url: siteOrigin,
   downloadUrl: `${siteOrigin}${localePath(locale, 'download')}`,
+  releaseNotes: `${siteOrigin}${localePath(locale, 'changelog')}`,
+  image: ogImageUrl,
+  screenshot: screenshotUrl,
+  featureList: copy.meta.featureList,
   license: 'https://www.gnu.org/licenses/gpl-3.0.html',
+  codeRepository: 'https://github.com/JsonLee12138/Ruum',
+  sameAs: ['https://github.com/JsonLee12138/Ruum'],
   author: {
     '@type': 'Person',
     name: 'JsonLee12138',
     url: 'https://github.com/JsonLee12138',
   },
-  codeRepository: 'https://github.com/JsonLee12138/Ruum',
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
   },
+};
+
+const jsonLdGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [websiteJsonLd, softwareJsonLd],
 };
 ---
 
@@ -58,10 +80,7 @@ const softwareJsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="ruum, disk space analyzer, treemap, GPUI, Rust, SSH disk analyzer, Docker cleanup, AI disk watchdog, MCP server, macOS, Linux, Windows"
-    />
+    <meta name="keywords" content={copy.meta.keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -75,7 +94,7 @@ const softwareJsonLd = {
     <link rel="alternate" hreflang="x-default" href={`${siteOrigin}${localePath('en', subpath)}`} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="ruum" />
+    <meta property="og:site_name" content="Ruum" />
     <meta property="og:locale" content={OG_LOCALE_MAP[locale]} />
     {
       LOCALES.filter((loc) => loc !== locale).map((loc) => (
@@ -88,14 +107,15 @@ const softwareJsonLd = {
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="ruum — GPUI treemap disk analyzer, Docker cleanup, SSH & AI MCP" />
+    <meta property="og:image:alt" content={copy.meta.ogImageAlt} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={copy.meta.ogImageAlt} />
 
-    <script type="application/ld+json" set:html={JSON.stringify(softwareJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph)} />
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://fontsapi.zeoseven.com" crossorigin />
@@ -120,6 +140,12 @@ const softwareJsonLd = {
           (function () {
             try {
               if (navigator.webdriver) return;
+              if (
+                /bot|crawl|spider|slurp|bingpreview|mediapartners|lighthouse|headlesschrome/i.test(
+                  navigator.userAgent || '',
+                )
+              )
+                return;
               var saved = localStorage.getItem('ruum-locale');
               if (saved === 'en') return;
 

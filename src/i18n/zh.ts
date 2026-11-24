@@ -5,13 +5,28 @@ export const zh: SiteCopy = {
   localeLabel: "中文",
   htmlLang: "zh-CN",
   meta: {
-    homeTitle: "ruum — 面向 AI 时代的磁盘可视化分析、远程 SSH 与 Docker 安全清理工具",
+    homeTitle: "Ruum — 免费开源磁盘空间分析与 AI 磁盘清理工具 | Mac · Windows · Linux",
     homeDescription:
-      "基于 Rust 与 GPUI 构建的跨平台树状图磁盘分析器。本地与远程 SSH 直观可视、Docker 卷只读锁保护、O(1) AI Watchdog 守护进程与 8 工具 stdio MCP 服务。",
-    downloadTitle: "下载 ruum — macOS / Linux / Windows 桌面端与无头 CLI",
-    downloadDescription: "获取经过 SHA-256 校验与 Sigstore 签名的 ruum 三端安装包与一键脚本。",
-    changelogTitle: "更新日志 — ruum 版本演进",
-    changelogDescription: "ruum 在 macOS、Linux 与 Windows 平台上的完整发布历史与特性迭代。",
+      "Ruum 是支持 macOS、Windows（C盘 NTFS 极速扫描）与 Linux 的免费开源磁盘空间分析与 AI 磁盘清理工具。树状图直观定位大文件、开发缓存、Docker 与远程 SSH 服务器占用，内置 MCP 服务安全清理。",
+    downloadTitle: "下载 Ruum — macOS、Windows 与 Linux 免费磁盘清理及空间分析工具",
+    downloadDescription:
+      "免费下载经过 SHA-256 校验与 Sigstore 签名的 Ruum 桌面端安装包与服务器 CLI，支持 macOS (Apple Silicon/Intel)、Windows C盘极速扫描与 Linux。",
+    changelogTitle: "Ruum 更新日志 — 跨平台 AI 磁盘空间分析与清理工具版本记录",
+    changelogDescription:
+      "查看 Ruum 磁盘空间分析与 AI 清理工具在 macOS、Windows 与 Linux 平台上的完整发布历史与特性迭代。",
+    keywords:
+      "Ruum, ruum, 磁盘工具, 磁盘清理工具, 磁盘空间分析, AI磁盘工具, AI磁盘清理, Mac磁盘清理, Mac系统数据清理, Windows磁盘分析工具, C盘清理工具, Linux磁盘占用, Docker空间清理, SSH服务器磁盘满, MCP磁盘工具, 大文件查找, node_modules清理, 免费开源",
+    ogImageAlt: "Ruum — 免费开源磁盘空间分析与 AI 磁盘清理工具（macOS / Windows / Linux）",
+    applicationSubCategory: "跨平台磁盘空间分析与 AI 磁盘清理工具",
+    alternateNames: ["ruum", "Ruum 磁盘空间分析工具", "Ruum AI 磁盘清理工具"],
+    featureList: [
+      "支持 macOS、Windows（管理员直读 NTFS MFT）与 Linux 的实时树状图磁盘空间分析",
+      "O(1) AI Watchdog 守护与 8 工具 stdio MCP 服务，强制弹窗确认防误删",
+      "内置 Docker 空间清理与本地卷（Local Volumes）核心层只读锁定保护",
+      "免 sudo 远程 SSH 磁盘诊断，自动部署哈希校验的静态 musl 扫描流",
+      "一眼识别 node_modules、Xcode、Cargo 构建缓存与可清理开发目录",
+      "Rust 核心安全护栏：默认移入废纸篓、屏蔽系统目录并免 Hook 检查 Git 状态",
+    ],
   },
   nav: {
     home: "首页",
@@ -19,11 +34,12 @@ export const zh: SiteCopy = {
     safety: "安全护栏",
     download: "下载安装",
     changelog: "更新日志",
-    support: "支持",
+    support: "打赏",
     installCta: "立即安装",
     themeToDark: "切换至黑曜石深色主题",
     themeToLight: "切换至暖纸制图浅色主题",
     menu: "菜单",
+    logoAlt: "Ruum 图标",
   },
   hero: {
     eyebrowPrefix: "Rust + GPUI",
@@ -31,8 +47,8 @@ export const zh: SiteCopy = {
     headlineLine1: "看清谁占满了硬盘，",
     headlineLine2: "安全腾出呼吸空间。",
     subcopy:
-      "将本地磁盘、Docker 存储与远程 SSH 服务器绘制成按真实占用缩放的 GPUI 树状图。内置 O(1) AI Watchdog 守护与 MCP 服务智能诊断——任何删除均需由你确认后才执行。",
-    primaryCta: "下载 ruum",
+      "Ruum 是支持 macOS、Windows 与 Linux 的免费开源磁盘空间分析与 AI 磁盘清理工具。树状图直观定位本地大文件、开发缓存、Docker 与远程 SSH 占用，内置 AI 守护与 MCP 服务——任何清理均需你确认后执行。",
+    primaryCta: "下载 Ruum",
     secondaryCta: "GitHub 仓库",
     tourCta: "快速开始",
     tourHint: "下方支持「交互演示」与「macOS 实机截图」随时切换 — 也可点击快速开始按步骤上手",
@@ -51,12 +67,13 @@ export const zh: SiteCopy = {
     verifiedNote: "Ed25519 + SHA-256 签名验真",
   },
   sandbox: {
-    windowTitle: "ruum",
+    windowTitle: "Ruum",
     demoModeLabel: "交互演示",
     screenshotModeLabel: "实机截图",
     demoDisclaimer: "模拟数据",
     screenshotCaption:
       "macOS 桌面端实机截图。切回「交互演示」可在线体验标记清理、Docker、SSH 与 Watchdog。",
+    screenshotAlt: "Ruum macOS 原生桌面端磁盘空间分析实机截图",
     tourButton: "快速开始",
     rescanButton: "重扫演示",
     resetButton: "重置",
@@ -67,7 +84,7 @@ export const zh: SiteCopy = {
       ssh: "远程 SSH",
     },
     explore: {
-      breadcrumbRoot: "ruum / Users / dev",
+      breadcrumbRoot: "Ruum / Users / dev",
       summaryItems: "263 GiB · 4,184,346 个文件 · 63.0 秒",
       modeSize: "按大小",
       modeAge: "按时间",
@@ -109,7 +126,7 @@ export const zh: SiteCopy = {
         localVolumes: "本地卷 (Local Volumes)",
       },
       protectedBadge: "受保护 · 只读",
-      protectedNote: "数据库与持久化数据卷永久锁定只读，ruum 绝不会自动清理本地卷。",
+      protectedNote: "数据库与持久化数据卷永久锁定只读，Ruum 绝不会自动清理本地卷。",
       sharedNotePrefix: "与镜像共享层",
       candidatesTitle: "可安全清理项",
       cleanBtn: "清理所选项",
@@ -149,7 +166,7 @@ export const zh: SiteCopy = {
       progressText: "{{current}} / {{total}}",
       steps: {
         install: {
-          title: "1. 一行命令安装 ruum",
+          title: "1. 一行命令安装 Ruum",
           description:
             "按你的系统选择对应标签，一键复制经过 SHA-256 校验的安装命令（或服务器专用 --cli-only），也可点上方「下载安装」进入全平台安装包列表。",
         },
@@ -261,7 +278,8 @@ export const zh: SiteCopy = {
         "实时可用空间预测条自动合并嵌套标记，绝不重复计算可释放容量",
       ],
       legendTitle: "分类语义色板",
-      hatchCaption: "45° 斜纹 = 可安全重建的缓存、构建产物、Worktree 或包存储",
+      hatchCaption:
+        "45° 斜纹 = 可安全清理的 node_modules、Xcode / Cargo 构建缓存、Worktree 或包存储",
       categories: [
         "代码",
         "Agent 临时区",
@@ -329,20 +347,20 @@ export const zh: SiteCopy = {
     eyebrow: "开源项目 · GPL-3.0",
     title: "请我喝杯咖啡",
     description:
-      "如果 ruum 帮你找回了宝贵的磁盘空间或节省了排查时间，欢迎请我喝杯咖啡，你的支持是我持续维护的动力。",
+      "如果 Ruum 帮你找回了宝贵的磁盘空间或节省了排查时间，欢迎请我喝杯咖啡，你的支持是我持续维护的动力。",
     kofiCta: "",
     kofiNote: "",
     wechatTrigger: "微信赞赏码",
     wechatModalTitle: "微信扫码 · 请我喝杯咖啡",
-    wechatHint: "使用微信扫一扫赞赏支持 · ruum 始终保持免费开源。",
+    wechatHint: "使用微信扫一扫赞赏支持 · Ruum 始终保持免费开源。",
     wechatAlt: "Json Lee 的微信赞赏码（请我喝杯咖啡）",
     closeLabel: "关闭赞赏码弹窗",
   },
   downloadPage: {
     eyebrow: "发行版与校验中心",
-    title: "下载 ruum",
+    title: "下载 Ruum",
     subtitle:
-      "macOS、Linux 与 Windows 三端安装包、包管理器及无头服务器 CLI，全量提供 SHA-256 与 Sigstore 校验。",
+      "适用于 macOS、Windows 与 Linux 的免费磁盘空间分析与清理工具安装包、包管理器及无头服务器 CLI，全量提供 SHA-256 与 Sigstore 校验。",
     channelStable: "稳定版 (Stable)",
     channelBeta: "测试版 (Beta)",
     recommendedForPrefix: "推荐下载 ·",
@@ -372,10 +390,10 @@ export const zh: SiteCopy = {
     platformNotesHeading: "各平台首次使用提示",
     macosNoteTitle: "macOS · Gatekeeper 与完全磁盘访问权限",
     macosNoteBody:
-      "未签名构建如遇系统拦截，可运行一次 `xattr -dr com.apple.quarantine /Applications/ruum.app`。如需扫描废纸篓或受保护容器目录，请在「系统设置 › 隐私与安全性 › 完全磁盘访问权限」中授权 ruum。",
+      "未签名构建如遇系统拦截，可运行一次 `xattr -dr com.apple.quarantine /Applications/ruum.app`。如需扫描废纸篓或受保护容器目录，请在「系统设置 › 隐私与安全性 › 完全磁盘访问权限」中授权 Ruum。",
     windowsNoteTitle: "Windows · NTFS MFT 极速直读",
     windowsNoteBody:
-      "扫描整个 NTFS 磁盘（如 C:\\）时，以管理员身份运行可直读 NTFS 主文件表（MFT），扫描速度比常规遍历快数倍。",
+      "扫描整个 NTFS 磁盘（如 C:\\）时，以管理员身份运行 Ruum 可直读 NTFS 主文件表（MFT），扫描速度比常规遍历快数倍。",
     linuxNoteTitle: "Linux · Wayland / X11 与 Hyprland",
     linuxNoteBody:
       "桌面端需要支持 Vulkan 的 Wayland 或 X11 会话（无头服务器可用 `--cli-only` 或 `ruum ssh --check`）。Hyprland 推荐添加浮动规则：`windowrule = float, class:^(ruum)$`。",
@@ -396,6 +414,7 @@ export const zh: SiteCopy = {
     viewOnGithub: "在 GitHub 查看 Release",
   },
   footer: {
+    logoAlt: "Ruum 标识",
     etymologyTitle: '为什么叫 "Ruum"？',
     etymologyBody:
       "源自古诺尔斯语中表示「开阔空间与宽敞余地」（rúm）的词义——扫除积灰缓存与构建残留，让每块磁盘重获通透的呼吸空间。",
@@ -410,7 +429,7 @@ export const zh: SiteCopy = {
       issues: "问题反馈",
       download: "下载安装",
       changelog: "更新日志",
-      support: "支持",
+      support: "打赏",
     },
   },
 };

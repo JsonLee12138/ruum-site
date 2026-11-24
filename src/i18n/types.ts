@@ -29,6 +29,11 @@ export interface SiteCopy {
     downloadDescription: string;
     changelogTitle: string;
     changelogDescription: string;
+    keywords: string;
+    ogImageAlt: string;
+    applicationSubCategory: string;
+    alternateNames: string[];
+    featureList: string[];
   };
   nav: {
     home: string;
@@ -41,6 +46,7 @@ export interface SiteCopy {
     themeToDark: string;
     themeToLight: string;
     menu: string;
+    logoAlt: string;
   };
   hero: {
     eyebrowPrefix: string;
@@ -72,6 +78,7 @@ export interface SiteCopy {
     screenshotModeLabel: string;
     demoDisclaimer: string;
     screenshotCaption: string;
+    screenshotAlt: string;
     tourButton: string;
     rescanButton: string;
     resetButton: string;
@@ -277,6 +284,7 @@ export interface SiteCopy {
     viewOnGithub: string;
   };
   footer: {
+    logoAlt: string;
     etymologyTitle: string;
     etymologyBody: string;
     license: string;

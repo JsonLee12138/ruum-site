@@ -8,7 +8,8 @@
     "dev": "astro dev",
     "build": "node scripts/sync-releases.mjs && astro build",
     "preview": "astro preview",
-    "check": "astro check && vp check"
+    "check": "astro check && vp check",
+    "test": "node --test scripts/test-platform-detect.mjs scripts/test-seo.mjs scripts/test-nav-active.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.9",

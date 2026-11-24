@@ -1,6 +1,7 @@
 ---
 import releasesData from '../data/releases.json';
 import { LOCALES, getCopy, localePath, type Locale } from '../i18n';
+import TipMugButton from './TipMugButton.astro';
 
 interface Props {
   locale: Locale;
@@ -21,6 +22,7 @@ const changelogHref = localePath(locale, 'changelog');
 ---
 
 <header
+  data-nav-subpath={subpath}
   class="sticky top-0 z-50 h-14 border-b border-hairline bg-canvas/90 backdrop-blur-md"
 >
   <div class="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 sm:px-6">
@@ -29,8 +31,8 @@ const changelogHref = localePath(locale, 'changelog');
         href={homeUrl}
         class="inline-flex items-center gap-2.5 text-ink no-underline hover:opacity-90 transition-opacity"
       >
-        <img src="/ruum.svg" alt="ruum logo" width="26" height="26" class="h-[26px] w-[26px] rounded-[4px]" />
-        <span class="text-[16px] font-bold tracking-[-0.02em]">ruum</span>
+        <img src="/ruum.svg" alt={copy.nav.logoAlt} width="26" height="26" class="h-[26px] w-[26px] rounded-[4px]" />
+        <span class="text-[16px] font-bold tracking-[-0.02em]">Ruum</span>
       </a>
       <a
         href={changelogHref}
@@ -44,6 +46,9 @@ const changelogHref = localePath(locale, 'changelog');
     <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[13px] font-medium text-ink-secondary" aria-label="Main navigation">
       <a
         href={homeUrl}
+        data-nav-key="home"
+        data-nav-variant="desktop"
+        aria-current={subpath === '' ? 'page' : undefined}
         class:list={[
           'no-underline transition-colors whitespace-nowrap',
           subpath === '' ? 'text-amber font-semibold' : 'text-inherit hover:text-ink',
@@ -51,10 +56,25 @@ const changelogHref = localePath(locale, 'changelog');
       >
         {copy.nav.home}
       </a>
-      <a href={capHref} class="no-underline text-inherit hover:text-ink transition-colors whitespace-nowrap">{copy.nav.capabilities}</a>
-      <a href={safetyHref} class="no-underline text-inherit hover:text-ink transition-colors whitespace-nowrap">{copy.nav.safety}</a>
+      <a
+        href={capHref}
+        data-nav-key="capabilities"
+        data-nav-variant="desktop"
+        class="no-underline text-inherit hover:text-ink transition-colors whitespace-nowrap"
+      >
+        {copy.nav.capabilities}
+      </a>
+      <a
+        href={safetyHref}
+        data-nav-key="safety"
+        data-nav-variant="desktop"
+        class="no-underline text-inherit hover:text-ink transition-colors whitespace-nowrap"
+      >
+        {copy.nav.safety}
+      </a>
       <a
         href={downloadHref}
+        aria-current={subpath === 'download' ? 'page' : undefined}
         class:list={[
           'no-underline transition-colors whitespace-nowrap',
           subpath === 'download' ? 'text-amber font-semibold' : 'text-inherit hover:text-ink',
@@ -64,6 +84,7 @@ const changelogHref = localePath(locale, 'changelog');
       </a>
       <a
         href={changelogHref}
+        aria-current={subpath === 'changelog' ? 'page' : undefined}
         class:list={[
           'no-underline transition-colors whitespace-nowrap',
           subpath === 'changelog' ? 'text-amber font-semibold' : 'text-inherit hover:text-ink',
@@ -71,7 +92,7 @@ const changelogHref = localePath(locale, 'changelog');
       >
         {copy.nav.changelog}
       </a>
-      <a href={supportHref} class="no-underline text-inherit hover:text-ink transition-colors whitespace-nowrap">{copy.nav.support}</a>
+      <TipMugButton href={supportHref} label={copy.nav.support} bubble={copy.support.title} variant="nav" />
     </nav>
 
     <div class="flex items-center gap-2">
@@ -168,6 +189,9 @@ const changelogHref = localePath(locale, 'changelog');
     <div class="grid grid-cols-2 gap-2 text-[13px] font-medium">
       <a
         href={homeUrl}
+        data-nav-key="home"
+        data-nav-variant="drawer"
+        aria-current={subpath === '' ? 'page' : undefined}
         class:list={[
           'slab px-3 py-2 no-underline',
           subpath === '' ? 'text-amber font-semibold' : 'text-ink',
@@ -175,11 +199,43 @@ const changelogHref = localePath(locale, 'changelog');
       >
         {copy.nav.home}
       </a>
-      <a href={capHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.capabilities}</a>
-      <a href={safetyHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.safety}</a>
-      <a href={downloadHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.download}</a>
-      <a href={changelogHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.changelog}</a>
-      <a href={supportHref} class="slab px-3 py-2 no-underline text-ink">{copy.nav.support}</a>
+      <a
+        href={capHref}
+        data-nav-key="capabilities"
+        data-nav-variant="drawer"
+        class="slab px-3 py-2 no-underline text-ink"
+      >
+        {copy.nav.capabilities}
+      </a>
+      <a
+        href={safetyHref}
+        data-nav-key="safety"
+        data-nav-variant="drawer"
+        class="slab px-3 py-2 no-underline text-ink"
+      >
+        {copy.nav.safety}
+      </a>
+      <a
+        href={downloadHref}
+        aria-current={subpath === 'download' ? 'page' : undefined}
+        class:list={[
+          'slab px-3 py-2 no-underline',
+          subpath === 'download' ? 'text-amber font-semibold' : 'text-ink',
+        ]}
+      >
+        {copy.nav.download}
+      </a>
+      <a
+        href={changelogHref}
+        aria-current={subpath === 'changelog' ? 'page' : undefined}
+        class:list={[
+          'slab px-3 py-2 no-underline',
+          subpath === 'changelog' ? 'text-amber font-semibold' : 'text-ink',
+        ]}
+      >
+        {copy.nav.changelog}
+      </a>
+      <TipMugButton href={supportHref} label={copy.nav.support} bubble={copy.support.title} variant="drawer" />
     </div>
     <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-hairline">
       <div class="inline-flex items-center rounded-[2px] border border-hairline bg-canvas p-0.5">
@@ -214,6 +270,12 @@ const changelogHref = localePath(locale, 'changelog');
 </header>
 
 <script>
+  import {
+    HOME_NAV_SECTIONS,
+    parseHomeNavHash,
+    resolveHomeNavKey,
+    type HomeNavKey,
+  } from '../lib/nav-active';
   import { refreshLatestStableTag } from '../lib/releases-client';
 
   const btn = document.getElementById('theme-toggle-btn');
@@ -283,5 +345,106 @@ const changelogHref = localePath(locale, 'changelog');
         el.textContent = liveTag;
       });
     });
+  }
+
+  const headerEl = document.querySelector<HTMLElement>('header[data-nav-subpath]');
+  if (headerEl?.dataset.navSubpath === '') {
+    const homeNavLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-nav-key]'));
+    const sectionRefs = HOME_NAV_SECTIONS.map((key) => ({
+      key,
+      el: document.getElementById(key),
+    })).filter(
+      (item): item is { key: Exclude<HomeNavKey, 'home'>; el: HTMLElement } => Boolean(item.el),
+    );
+
+    const applyActiveNav = (activeKey: HomeNavKey) => {
+      for (const link of homeNavLinks) {
+        const isMatch = link.dataset.navKey === activeKey;
+        const isDesktop = link.dataset.navVariant === 'desktop';
+        if (isMatch) {
+          if (isDesktop) {
+            link.classList.remove('text-inherit', 'hover:text-ink');
+          } else {
+            link.classList.remove('text-ink');
+          }
+          link.classList.add('text-amber', 'font-semibold');
+          link.setAttribute('aria-current', activeKey === 'home' ? 'page' : 'location');
+        } else {
+          link.classList.remove('text-amber', 'font-semibold');
+          if (isDesktop) {
+            link.classList.add('text-inherit', 'hover:text-ink');
+          } else {
+            link.classList.add('text-ink');
+          }
+          link.removeAttribute('aria-current');
+        }
+      }
+    };
+
+    if (homeNavLinks.length > 0 && sectionRefs.length > 0) {
+      let pendingTarget: { key: HomeNavKey; until: number } | null = null;
+      let rafId = 0;
+
+      const syncNavFromScroll = () => {
+        const computed = resolveHomeNavKey({
+          scrollY: window.scrollY,
+          viewportHeight: window.innerHeight,
+          docHeight: document.documentElement.scrollHeight,
+          sections: sectionRefs.map(({ key, el }) => ({
+            key,
+            top: el.getBoundingClientRect().top + window.scrollY,
+          })),
+        });
+
+        if (pendingTarget) {
+          if (computed === pendingTarget.key || Date.now() >= pendingTarget.until) {
+            pendingTarget = null;
+          } else {
+            return;
+          }
+        }
+
+        applyActiveNav(computed);
+      };
+
+      const scheduleSync = () => {
+        if (rafId) return;
+        rafId = window.requestAnimationFrame(() => {
+          rafId = 0;
+          syncNavFromScroll();
+        });
+      };
+
+      for (const link of homeNavLinks) {
+        link.addEventListener('click', () => {
+          const key = link.dataset.navKey as HomeNavKey | undefined;
+          if (key === 'capabilities' || key === 'safety') {
+            pendingTarget = { key, until: Date.now() + 900 };
+            applyActiveNav(key);
+          }
+        });
+      }
+
+      const initialHashKey = parseHomeNavHash(window.location.hash);
+      if (initialHashKey) {
+        pendingTarget = { key: initialHashKey, until: Date.now() + 900 };
+        applyActiveNav(initialHashKey);
+      } else {
+        syncNavFromScroll();
+      }
+
+      window.addEventListener('scroll', scheduleSync, { passive: true });
+      window.addEventListener('resize', scheduleSync, { passive: true });
+      window.addEventListener('hashchange', () => {
+        const hashKey = parseHomeNavHash(window.location.hash);
+        if (hashKey) {
+          pendingTarget = { key: hashKey, until: Date.now() + 900 };
+          applyActiveNav(hashKey);
+        } else {
+          pendingTarget = null;
+          syncNavFromScroll();
+        }
+      });
+    }
   }
 </script>

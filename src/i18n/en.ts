@@ -5,15 +5,30 @@ export const en: SiteCopy = {
   localeLabel: "EN",
   htmlLang: "en",
   meta: {
-    homeTitle: "ruum — AI-Ready Disk Analyzer, Remote SSH & Docker Cleanup",
+    homeTitle:
+      "Ruum — Free Open-Source Disk Space Analyzer & AI Disk Cleanup (Mac, Windows, Linux)",
     homeDescription:
-      "Cross-platform treemap disk analyzer built in Rust with GPUI. Inspect local, Docker, and SSH servers visually, monitor free space with an O(1) AI Watchdog, and safely connect AI agents via MCP.",
-    downloadTitle: "Download ruum — macOS, Linux, Windows & Headless CLI",
+      "Ruum is a free, open-source treemap disk space analyzer and AI disk cleanup tool for macOS, Windows (fast NTFS MFT), and Linux. Visualize large files, dev caches, Docker, and SSH servers safely with built-in MCP.",
+    downloadTitle: "Download Ruum — Free Disk Space Analyzer for macOS, Windows & Linux",
     downloadDescription:
-      "Install ruum desktop and CLI across macOS, Linux, and Windows with SHA-256 checksums and Sigstore build provenance.",
-    changelogTitle: "Changelog — ruum Releases",
+      "Download Ruum desktop installers and headless server CLI for macOS (Apple Silicon & Intel), Windows, and Linux — verified with SHA-256 checksums and Sigstore build provenance.",
+    changelogTitle: "Ruum Changelog — Disk Space Analyzer & AI Cleanup Release History",
     changelogDescription:
-      "Release history and engineering milestones for ruum across macOS, Linux, and Windows.",
+      "Official release notes, new features, and engineering milestones for Ruum across macOS, Windows, and Linux.",
+    keywords:
+      "Ruum, ruum, disk space analyzer, AI disk cleanup, disk cleanup tool, mac disk space analyzer, windows disk analyzer, linux disk usage gui, docker disk cleanup, ssh disk space analyzer, MCP disk server, find large files, node_modules cleanup, open source",
+    ogImageAlt:
+      "Ruum — Free open-source disk space analyzer and AI disk cleanup tool for macOS, Windows, and Linux",
+    applicationSubCategory: "Disk Space Analyzer & AI Disk Cleanup Tool",
+    alternateNames: ["ruum", "Ruum Disk Space Analyzer", "Ruum AI Disk Cleanup"],
+    featureList: [
+      "Visual treemap disk space analyzer for macOS, Windows (fast NTFS MFT direct read), and Linux",
+      "O(1) AI Watchdog daemon and 8-tool stdio MCP server with human confirmation gates",
+      "Docker Space Explorer with core-level Protected Read-only lock for Local Volumes",
+      "Zero-sudo remote SSH disk diagnostics using checksum-verified static musl streaming",
+      "Instant developer cache detection for node_modules, Xcode, Cargo, and build outputs",
+      "Trash-first Rust safety guardrails with OS/mount refusal and hook-free Git checks",
+    ],
   },
   nav: {
     home: "Home",
@@ -26,6 +41,7 @@ export const en: SiteCopy = {
     themeToDark: "Switch to Obsidian dark theme",
     themeToLight: "Switch to Warm Paper light theme",
     menu: "Menu",
+    logoAlt: "Ruum logo",
   },
   hero: {
     eyebrowPrefix: "Rust + GPUI",
@@ -33,8 +49,8 @@ export const en: SiteCopy = {
     headlineLine1: "Make room on",
     headlineLine2: "every drive.",
     subcopy:
-      "See what fills local disks, Docker storage, and remote SSH servers in a proportional GPUI treemap. Let the O(1) AI Watchdog and MCP server prepare proposals — nothing is removed until you confirm.",
-    primaryCta: "Download ruum",
+      "Ruum is a free, open-source disk space analyzer and AI disk cleanup tool for macOS, Windows, and Linux. Visualize large files, dev caches, Docker, and remote SSH servers in a fast treemap — nothing is removed until you confirm.",
+    primaryCta: "Download Ruum",
     secondaryCta: "View on GitHub",
     tourCta: "Quick Start",
     tourHint:
@@ -54,12 +70,13 @@ export const en: SiteCopy = {
     verifiedNote: "Ed25519 + SHA-256 verified",
   },
   sandbox: {
-    windowTitle: "ruum",
+    windowTitle: "Ruum",
     demoModeLabel: "Interactive Demo",
     screenshotModeLabel: "Real Screenshot",
     demoDisclaimer: "Sample data",
     screenshotCaption:
       "Actual macOS desktop screenshot. Switch to Interactive Demo to try tile marking, Docker, Remote SSH, and Watchdog.",
+    screenshotAlt: "Unedited macOS GPUI desktop screenshot of Ruum disk space analyzer",
     tourButton: "Quick Start",
     rescanButton: "Rescan",
     resetButton: "Reset",
@@ -70,7 +87,7 @@ export const en: SiteCopy = {
       ssh: "Remote",
     },
     explore: {
-      breadcrumbRoot: "ruum / Users / dev",
+      breadcrumbRoot: "Ruum / Users / dev",
       summaryItems: "263 GiB · 4,184,346 files · 63.0 s",
       modeSize: "Size",
       modeAge: "Age",
@@ -112,7 +129,7 @@ export const en: SiteCopy = {
         localVolumes: "Local Volumes",
       },
       protectedBadge: "Protected · Read-only",
-      protectedNote: "Database & state volumes stay locked and are never pruned by ruum.",
+      protectedNote: "Database & state volumes stay locked and are never pruned by Ruum.",
       sharedNotePrefix: "shared with images",
       candidatesTitle: "Safe cleanup candidates",
       cleanBtn: "Clean selected",
@@ -208,7 +225,7 @@ export const en: SiteCopy = {
       eyebrow: "02 · Remote SSH Diagnostics",
       title: "Zero-sudo static musl streaming over SSH.",
       description:
-        "Point ruum at any SSH host alias. Packaged builds upload a checksum-verified static musl binary into ~/.cache/ruum/ssh/ and stream bounded records without storing the tree in remote RAM.",
+        "Point Ruum at any SSH host alias. Packaged builds upload a checksum-verified static musl binary into ~/.cache/ruum/ssh/ and stream bounded records without storing the tree in remote RAM.",
       bullets: [
         "Stops at nested mount points and terminates cleanly on disconnect",
         "Remote GUI is strictly export-only — no direct remote delete buttons",
@@ -249,7 +266,7 @@ export const en: SiteCopy = {
         { name: "Build Cache", status: "Unique vs shared layers split", badge: "Reclaimable" },
         {
           name: "Local Volumes",
-          status: "Never auto-pruned by ruum",
+          status: "Never auto-pruned by Ruum",
           badge: "Protected · Read-only",
         },
       ],
@@ -265,7 +282,8 @@ export const en: SiteCopy = {
         "Live free-space projection meter prevents double-counting nested marks",
       ],
       legendTitle: "Category Colour Map",
-      hatchCaption: "45° Hatch = Reclaimable cache, build output, worktree, or package store",
+      hatchCaption:
+        "45° Hatch = Reclaimable node_modules, Xcode / Cargo build cache, worktrees, or package stores",
       categories: [
         "Code",
         "Agent scratch",
@@ -336,9 +354,9 @@ export const en: SiteCopy = {
     eyebrow: "OPEN SOURCE · GPL-3.0",
     title: "Buy Me a Coffee",
     description:
-      "If ruum helped you reclaim disk space or saved you time, consider buying me a coffee — your support helps keep the project going.",
+      "If Ruum helped you reclaim disk space or saved you time, consider buying me a coffee — your support helps keep the project going.",
     kofiCta: "Buy me a coffee on Ko-fi",
-    kofiNote: "One-time tip via Ko-fi · ruum remains 100% free and open source.",
+    kofiNote: "One-time tip via Ko-fi · Ruum remains 100% free and open source.",
     wechatTrigger: "",
     wechatModalTitle: "",
     wechatHint: "",
@@ -347,9 +365,9 @@ export const en: SiteCopy = {
   },
   downloadPage: {
     eyebrow: "Distributions & Verification",
-    title: "Download ruum",
+    title: "Download Ruum",
     subtitle:
-      "Tri-platform desktop installers, package managers, and headless server CLI — verified with SHA-256 and Sigstore.",
+      "Free desktop installers, package managers, and headless server CLI for macOS, Windows, and Linux — verified with SHA-256 and Sigstore.",
     channelStable: "Stable",
     channelBeta: "Beta",
     recommendedForPrefix: "Recommended for",
@@ -383,7 +401,7 @@ export const en: SiteCopy = {
       "For unsigned builds, run `xattr -dr com.apple.quarantine /Applications/ruum.app` once. Grant Full Disk Access in System Settings › Privacy & Security to scan protected app containers and Trash.",
     windowsNoteTitle: "Windows · Fast NTFS MFT Scans",
     windowsNoteBody:
-      "When scanning a full NTFS drive such as C:\\, launching or restarting ruum as Administrator reads the Master File Table directly — multiple times faster than directory traversal.",
+      "When scanning a full NTFS drive such as C:\\, launching or restarting Ruum as Administrator reads the Master File Table directly — multiple times faster than directory traversal.",
     linuxNoteTitle: "Linux · Wayland, X11 & Hyprland",
     linuxNoteBody:
       "Linux GUI builds require Wayland or X11 with a Vulkan-capable GPU (or use `--cli-only` / `ruum ssh --check` headless). On Hyprland, set `windowrule = float, class:^(ruum)$`.",
@@ -404,6 +422,7 @@ export const en: SiteCopy = {
     viewOnGithub: "Release on GitHub",
   },
   footer: {
+    logoAlt: "Ruum mark",
     etymologyTitle: 'Why "Ruum"?',
     etymologyBody:
       "From the Old Norse sense of spaciousness and open room (rúm) — built to clear forgotten caches and artifacts so every drive has open breathing room again.",

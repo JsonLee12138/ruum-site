@@ -37,7 +37,7 @@
     <rect x="32" y="32" width="14" height="14" fill="none" stroke="url(#amberCore)" stroke-width="2"/>
     <rect x="35" y="35" width="8" height="8" fill="url(#amberCore)"/>
   </g>
-  <text x="122" y="80" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="700" fill="#1A1917" letter-spacing="-0.02em">ruum</text>
+  <text x="122" y="80" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="700" fill="#1A1917" letter-spacing="-0.02em">Ruum</text>
   <text x="205" y="79" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#6B665E">RUST + GPUI · MACOS / LINUX / WINDOWS</text>
 
   <!-- Left editorial copy -->

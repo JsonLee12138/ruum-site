@@ -1,0 +1,485 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  bubble: string;
+  variant?: 'nav' | 'drawer';
+}
+
+const { href, label, bubble, variant = 'nav' } = Astro.props;
+---
+
+<a
+  href={href}
+  data-tip-btn
+  class:list={[
+    'tip-btn',
+    variant === 'nav' ? 'tip-btn--nav' : 'slab tip-btn--drawer px-3 py-2 no-underline text-ink',
+  ]}
+>
+  <svg
+    class="tip-mascot"
+    width="24"
+    height="24"
+    viewBox="0 0 32 32"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <g class="tip-mug">
+      <path class="tip-steam tip-steam-1 m-steam" d="M12 8.5c-1.6-1.4 1.6-2.6 0-4.2" />
+      <path class="tip-steam tip-steam-2 m-steam" d="M17.5 8.5c-1.6-1.4 1.6-2.6 0-4.2" />
+      <g class="tip-arm">
+        <path class="m-limb" d="M7.6 19c-2.6-.4-4.1-2.4-3.9-4.7" />
+        <circle class="m-glove" cx="3.8" cy="13.6" r="2" />
+      </g>
+      <path class="m-limb m-handle" d="M23.5 14.5h1.6a3.4 3.4 0 0 1 0 6.8h-1.6" />
+      <path
+        class="m-body"
+        d="M8 11.5h15.5v10.2a5.3 5.3 0 0 1-5.3 5.3h-4.9A5.3 5.3 0 0 1 8 21.7Z"
+      />
+      <ellipse class="m-coffee" cx="15.75" cy="11.5" rx="7.75" ry="1.9" />
+      <g class="tip-eyes-open">
+        <ellipse class="m-face-fill" cx="12.8" cy="17.6" rx="1.35" ry="1.85" />
+        <ellipse class="m-face-fill" cx="18.7" cy="17.6" rx="1.35" ry="1.85" />
+        <circle class="m-shine" cx="13.25" cy="16.95" r=".5" />
+        <circle class="m-shine" cx="19.15" cy="16.95" r=".5" />
+      </g>
+      <path
+        class="tip-eyes-happy m-face-line"
+        d="M11.5 18.1q1.3-1.8 2.6 0M17.4 18.1q1.3-1.8 2.6 0"
+      />
+      <ellipse class="m-blush" cx="10.9" cy="20.3" rx="1.4" ry=".8" />
+      <ellipse class="m-blush" cx="20.6" cy="20.3" rx="1.4" ry=".8" />
+      <path class="tip-mouth-smile m-face-line" d="M14.6 20.4q1.15 1.1 2.3 0" />
+      <path class="tip-mouth-open m-mouth" d="M14.4 20.1h2.7q-.2 2-1.35 2t-1.35-2Z" />
+    </g>
+    <path
+      class="tip-heart"
+      d="M25.5 7.2s-2.6-1.6-2.6-3.3a1.4 1.4 0 0 1 2.6-.7 1.4 1.4 0 0 1 2.6.7c0 1.7-2.6 3.3-2.6 3.3Z"
+    />
+  </svg>
+  <span class="tip-label">{label}</span>
+  {
+    variant === 'nav' && (
+      <span class="tip-bubble" aria-hidden="true">
+        {bubble}
+      </span>
+    )
+  }
+</a>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('[data-tip-btn]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      btn.classList.remove('is-tipped');
+      void btn.offsetWidth;
+      btn.classList.add('is-tipped');
+      window.setTimeout(() => btn.classList.remove('is-tipped'), 700);
+    });
+  });
+</script>
+
+<style>
+  .tip-btn {
+    --mug-line: #1a1917;
+    --mug-face: #1a1917;
+    --mug-body: #fff6e3;
+    --mug-coffee: #7a4a24;
+    --mug-blush: #f39bb4;
+    --mug-tongue: #c2415b;
+    --mug-glove: #ffffff;
+  }
+
+  :global([data-theme='dark']) .tip-btn {
+    --mug-line: #f5e9d0;
+    --mug-body: #e9d3a6;
+  }
+
+  .tip-btn--nav {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 28px;
+    padding: 0 10px 0 6px;
+    border: 1px solid var(--border-hairline);
+    border-radius: 2px;
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      border-color 180ms ease,
+      background-color 180ms ease,
+      color 180ms ease;
+  }
+
+  .tip-btn--nav:hover,
+  .tip-btn--nav:focus-visible {
+    color: var(--text-primary);
+    border-color: var(--sponsor-border);
+    background: var(--sponsor-soft);
+  }
+
+  .tip-btn--nav:focus-visible {
+    outline: 2px solid var(--sponsor-accent);
+    outline-offset: 2px;
+  }
+
+  .tip-btn--drawer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-color: var(--sponsor-border);
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .tip-btn--drawer .tip-mascot {
+    width: 22px;
+    height: 22px;
+  }
+
+  .tip-btn--drawer:hover,
+  .tip-btn--drawer:focus-visible,
+  .tip-btn--drawer:active {
+    background: var(--sponsor-soft);
+    border-color: var(--sponsor-accent);
+  }
+
+  .tip-mascot {
+    overflow: visible;
+    flex-shrink: 0;
+  }
+
+  .m-body {
+    fill: var(--mug-body);
+    stroke: var(--mug-line);
+    stroke-width: 2.2;
+    stroke-linejoin: round;
+  }
+
+  .m-coffee {
+    fill: var(--mug-coffee);
+    stroke: var(--mug-line);
+    stroke-width: 2;
+  }
+
+  .m-limb {
+    fill: none;
+    stroke: var(--mug-line);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+  }
+
+  .m-handle {
+    stroke-width: 2.2;
+  }
+
+  .m-glove {
+    fill: var(--mug-glove);
+    stroke: var(--mug-line);
+    stroke-width: 1.4;
+  }
+
+  .m-face-fill {
+    fill: var(--mug-face);
+  }
+
+  .m-shine {
+    fill: #ffffff;
+  }
+
+  .m-face-line {
+    fill: none;
+    stroke: var(--mug-face);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .m-blush {
+    fill: var(--mug-blush);
+    opacity: 0.85;
+  }
+
+  .m-mouth {
+    fill: var(--mug-tongue);
+    stroke: var(--mug-face);
+    stroke-width: 1.2;
+    stroke-linejoin: round;
+  }
+
+  .m-steam {
+    fill: none;
+    stroke: var(--text-muted);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+  }
+
+  .tip-heart {
+    fill: var(--sponsor-accent);
+    stroke: var(--mug-face);
+    stroke-width: 1;
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(0.3);
+  }
+
+  .tip-mug {
+    transform-box: view-box;
+    transform-origin: 16px 27px;
+  }
+
+  .tip-arm {
+    opacity: 0;
+    transform-box: view-box;
+    transform-origin: 7.6px 19px;
+    transform: rotate(55deg);
+    transition: opacity 160ms ease;
+  }
+
+  .tip-eyes-open {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: tip-blink 4.8s infinite;
+    transition: opacity 160ms ease;
+  }
+
+  .tip-eyes-happy,
+  .tip-mouth-open,
+  .tip-mouth-smile {
+    transition: opacity 160ms ease;
+  }
+
+  .tip-eyes-happy,
+  .tip-mouth-open {
+    opacity: 0;
+  }
+
+  .tip-steam {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: tip-steam-drift 2.6s ease-in-out infinite alternate;
+  }
+
+  .tip-steam-2 {
+    animation-delay: 0.7s;
+  }
+
+  .tip-btn:hover .tip-mug,
+  .tip-btn:focus-visible .tip-mug {
+    animation: tip-hop 560ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .tip-btn:hover .tip-eyes-open,
+  .tip-btn:focus-visible .tip-eyes-open {
+    opacity: 0;
+    animation: none;
+  }
+
+  .tip-btn:hover .tip-eyes-happy,
+  .tip-btn:focus-visible .tip-eyes-happy {
+    opacity: 1;
+  }
+
+  .tip-btn:hover .tip-mouth-smile,
+  .tip-btn:focus-visible .tip-mouth-smile {
+    opacity: 0;
+  }
+
+  .tip-btn:hover .tip-mouth-open,
+  .tip-btn:focus-visible .tip-mouth-open {
+    opacity: 1;
+  }
+
+  .tip-btn:hover .tip-arm,
+  .tip-btn:focus-visible .tip-arm {
+    opacity: 1;
+    animation: tip-wave 900ms ease-in-out 120ms both;
+  }
+
+  .tip-btn:hover .tip-steam,
+  .tip-btn:focus-visible .tip-steam {
+    animation-duration: 0.9s;
+  }
+
+  .tip-btn.is-tipped .tip-mug {
+    animation: tip-squash 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tip-btn.is-tipped .tip-heart {
+    animation: tip-heart-pop 650ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .tip-bubble {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    z-index: 60;
+    padding: 5px 10px;
+    border: 1.5px solid var(--text-primary);
+    border-radius: 10px;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    font-size: 11.5px;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 8px 18px -10px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px) scale(0.6);
+    transform-origin: 50% 0;
+    transition:
+      opacity 160ms ease,
+      transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .tip-bubble::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: var(--bg-elevated);
+    border-left: 1.5px solid var(--text-primary);
+    border-top: 1.5px solid var(--text-primary);
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  @media (hover: hover) {
+    .tip-btn--nav:hover .tip-bubble {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0) scale(1);
+      transition-delay: 120ms;
+    }
+  }
+
+  .tip-btn--nav:focus-visible .tip-bubble {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    transition-delay: 120ms;
+  }
+
+  @keyframes tip-blink {
+    0%,
+    92%,
+    100% {
+      transform: scaleY(1);
+    }
+    95% {
+      transform: scaleY(0.1);
+    }
+  }
+
+  @keyframes tip-steam-drift {
+    from {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+    to {
+      transform: translateY(-1.2px);
+      opacity: 0.95;
+    }
+  }
+
+  @keyframes tip-hop {
+    0% {
+      transform: translateY(0) scale(1, 1);
+    }
+    20% {
+      transform: translateY(1px) scale(1.12, 0.86);
+    }
+    50% {
+      transform: translateY(-4px) scale(0.92, 1.1);
+    }
+    75% {
+      transform: translateY(-1px) scale(1.04, 0.97);
+    }
+    100% {
+      transform: translateY(-1px) scale(1, 1);
+    }
+  }
+
+  @keyframes tip-wave {
+    0% {
+      transform: rotate(55deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    45% {
+      transform: rotate(18deg);
+    }
+    65% {
+      transform: rotate(-10deg);
+    }
+    85% {
+      transform: rotate(12deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes tip-squash {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: translateY(1px) scale(1.18, 0.8);
+    }
+    65% {
+      transform: translateY(-2px) scale(0.94, 1.08);
+    }
+    100% {
+      transform: translateY(-1px) scale(1);
+    }
+  }
+
+  @keyframes tip-heart-pop {
+    0% {
+      opacity: 0;
+      transform: translateY(2px) scale(0.3);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(-2px) scale(1.15);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-7px) scale(0.9);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tip-mug,
+    .tip-arm,
+    .tip-steam,
+    .tip-eyes-open,
+    .tip-heart {
+      animation: none !important;
+    }
+
+    .tip-btn:hover .tip-arm,
+    .tip-btn:focus-visible .tip-arm {
+      transform: none;
+    }
+
+    .tip-bubble {
+      transform: translateX(-50%);
+      transition: opacity 160ms ease;
+    }
+
+    .tip-btn--nav:hover .tip-bubble,
+    .tip-btn--nav:focus-visible .tip-bubble {
+      transform: translateX(-50%);
+    }
+  }
+</style>

@@ -34,6 +34,10 @@
   --status-warn: #9a6b10;
   --status-danger: #9f2d2d;
   --status-danger-soft: rgba(159, 45, 45, 0.1);
+  --sponsor-accent: #a8325a;
+  --sponsor-soft: rgba(168, 50, 90, 0.08);
+  --sponsor-border: rgba(168, 50, 90, 0.34);
+  --sponsor-shadow: rgba(168, 50, 90, 0.22);
 
   /* 10 Ruum Category Fills (muted mineral hues mixed toward --bg-inset) */
   --cat-code: #cad2dd;
@@ -99,6 +103,10 @@
   --status-warn: #fbbf24;
   --status-danger: #f87171;
   --status-danger-soft: rgba(248, 113, 113, 0.12);
+  --sponsor-accent: #f4729e;
+  --sponsor-soft: rgba(244, 114, 158, 0.13);
+  --sponsor-border: rgba(244, 114, 158, 0.38);
+  --sponsor-shadow: rgba(244, 114, 158, 0.28);
 
   /* Dark mode Ruum Category Fills */
   --cat-code: #27303d;

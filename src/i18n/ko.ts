@@ -5,14 +5,30 @@ export const ko: SiteCopy = {
   localeLabel: "한국어",
   htmlLang: "ko",
   meta: {
-    homeTitle: "ruum — AI 시대의 트리맵 디스크 분석, 원격 SSH 및 Docker 안전 정리 도구",
+    homeTitle:
+      "Ruum — 무료 오픈소스 디스크 용량 분석 및 AI 디스크 정리 도구 (Mac · Windows · Linux)",
     homeDescription:
-      "Rust와 GPUI로 제작된 크로스 플랫폼 디스크 분석기. 로컬·Docker·원격 SSH 서버를 시각화하고 O(1) AI 워치독과 8개 도구의 stdio MCP 서버로 안전하게 공간을 확보하세요.",
-    downloadTitle: "ruum 다운로드 — macOS / Linux / Windows & CLI",
+      "Ruum은 macOS, Windows(고속 NTFS MFT 스캔), Linux를 지원하는 무료 오픈소스 트리맵 디스크 용량 분석 및 AI 디스크 정리 도구입니다. 대용량 파일, 개발 캐시, Docker, 원격 SSH 서버를 시각화하고 내장 MCP로 안전하게 정리하세요.",
+    downloadTitle: "Ruum 다운로드 — macOS · Windows · Linux 무료 디스크 용량 분석 및 정리 도구",
     downloadDescription:
-      "SHA-256 체크섬 및 Sigstore 증명이 포함된 macOS, Linux, Windows 설치 파일과 원라인 스크립트.",
-    changelogTitle: "변경 로그 — ruum 릴리스",
-    changelogDescription: "macOS, Linux, Windows용 ruum 공식 출시 내역과 업데이트 기록.",
+      "SHA-256 체크섬 및 Sigstore 빌드 증명이 포함된 macOS(Apple Silicon/Intel), Windows, Linux용 Ruum 데스크톱 설치 파일과 헤드리스 CLI를 무료로 다운로드하세요.",
+    changelogTitle: "Ruum 변경 로그 — 크로스 플랫폼 디스크 용량 분석 및 AI 정리 릴리스 기록",
+    changelogDescription:
+      "macOS, Windows, Linux용 디스크 용량 분석 및 AI 정리 도구 Ruum의 공식 출시 내역과 업데이트 기록을 확인하세요.",
+    keywords:
+      "Ruum, ruum, 디스크 용량 분석, 디스크 정리, AI 디스크 정리, 대용량 파일 찾기, Mac 디스크 정리, Windows 디스크 분석, C드라이브 정리, NTFS MFT, Linux 디스크 용량, Docker 용량 정리, SSH 서버 디스크, MCP 디스크 도구, node_modules 정리, 무료 오픈소스",
+    ogImageAlt:
+      "Ruum — macOS, Windows, Linux용 무료 오픈소스 디스크 용량 분석 및 AI 디스크 정리 도구",
+    applicationSubCategory: "디스크 용량 분석 및 AI 디스크 정리 도구",
+    alternateNames: ["ruum", "Ruum 디스크 용량 분석기", "Ruum AI 디스크 정리"],
+    featureList: [
+      "macOS, Windows(관리자 NTFS MFT 직접 읽기), Linux용 고속 트리맵 디스크 용량 분석",
+      "O(1) AI 워치독 데몬 및 사용자 승인 게이트가 적용된 8개 도구 stdio MCP 서버",
+      "로컬 볼륨을 코어 레벨 읽기 전용으로 잠가 보호하는 Docker 공간 탐색기",
+      "해시 검증된 정적 musl 스트리밍 기반의 sudo 없는 원격 SSH 디스크 진단",
+      "node_modules, Xcode, Cargo 빌드 캐시 등 재생성 가능한 개발 캐시 즉시 식별",
+      "휴지통 우선 이동, OS·마운트 경로 차단, 훅리스 Git 검사를 수행하는 Rust 안전 가드",
+    ],
   },
   nav: {
     home: "홈",
@@ -25,6 +41,7 @@ export const ko: SiteCopy = {
     themeToDark: "Obsidian 다크 테마로 전환",
     themeToLight: "Warm Paper 라이트 테마로 전환",
     menu: "메뉴",
+    logoAlt: "Ruum 로고",
   },
   hero: {
     eyebrowPrefix: "Rust + GPUI",
@@ -32,8 +49,8 @@ export const ko: SiteCopy = {
     headlineLine1: "모든 드라이브에",
     headlineLine2: "숨 쉴 여유를.",
     subcopy:
-      "로컬 드라이브, Docker 스토리지, 원격 SSH 서버의 점유율을 GPUI 트리맵으로 한눈에 파악하세요. O(1) AI 워치독과 MCP 서버가 정리 후보를 준비하며, 사용자의 명시적 승인 후에만 안전하게 실행합니다.",
-    primaryCta: "ruum 다운로드",
+      "Ruum은 macOS, Windows, Linux용 무료 오픈소스 디스크 용량 분석 및 AI 디스크 정리 도구입니다. 대용량 파일, 개발 캐시, Docker, 원격 SSH 서버 점유율을 트리맵으로 한눈에 파악하고 사용자 확인 후에만 안전하게 정리합니다.",
+    primaryCta: "Ruum 다운로드",
     secondaryCta: "GitHub 보기",
     tourCta: "빠른 시작",
     tourHint: "아래에서 웹 데모와 실제 macOS 스크린샷을 전환하거나 5단계 빠른 시작을 실행해 보세요",
@@ -52,12 +69,13 @@ export const ko: SiteCopy = {
     verifiedNote: "Ed25519 + SHA-256 서명 검증",
   },
   sandbox: {
-    windowTitle: "ruum",
+    windowTitle: "Ruum",
     demoModeLabel: "인터랙티브 데모",
     screenshotModeLabel: "실제 스크린샷",
     demoDisclaimer: "샘플 데이터",
     screenshotCaption:
       "macOS 데스크톱 앱의 실제 스크린샷입니다. 데모 모드로 전환하면 직접 체험할 수 있습니다.",
+    screenshotAlt: "Ruum macOS 네이티브 데스크톱 앱 디스크 용량 분석 실제 스크린샷",
     tourButton: "빠른 시작",
     rescanButton: "다시 스캔",
     resetButton: "초기화",
@@ -68,7 +86,7 @@ export const ko: SiteCopy = {
       ssh: "원격",
     },
     explore: {
-      breadcrumbRoot: "ruum / Users / dev",
+      breadcrumbRoot: "Ruum / Users / dev",
       summaryItems: "263 GiB · 파일 4,184,346개 · 63.0초",
       modeSize: "크기순",
       modeAge: "수정 시점",
@@ -111,7 +129,7 @@ export const ko: SiteCopy = {
       },
       protectedBadge: "보호됨 · 읽기 전용",
       protectedNote:
-        "데이터베이스 등 로컬 볼륨은 읽기 전용으로 잠겨 자동 정리 대상에서 제외됩니다.",
+        "데이터베이스 등 로컬 볼륨은 읽기 전용으로 잠겨 Ruum이 절대 자동으로 삭제하지 않습니다.",
       sharedNotePrefix: "이미지와 공유됨",
       candidatesTitle: "안전한 정리 후보",
       cleanBtn: "선택 항목 정리",
@@ -264,7 +282,8 @@ export const ko: SiteCopy = {
         "중첩 선택을 이중 합산하지 않는 실시간 여유 공간 예측 미터",
       ],
       legendTitle: "카테고리 시맨틱 팔레트",
-      hatchCaption: "45° 빗금 = 재생성 가능한 캐시, 빌드 산출물, worktree, 패키지 저장소",
+      hatchCaption:
+        "45° 빗금 = 재생성 가능한 node_modules, Xcode / Cargo 빌드 캐시, worktree, 패키지 저장소",
       categories: [
         "코드",
         "Agent 임시",
@@ -335,9 +354,9 @@ export const ko: SiteCopy = {
     eyebrow: "OPEN SOURCE · GPL-3.0",
     title: "커피 한 잔 사주기",
     description:
-      "ruum이 디스크 공간을 되찾고 정리 시간을 줄이는 데 도움이 되었다면, 커피 한 잔으로 응원해 주세요.",
+      "Ruum이 디스크 공간을 되찾고 정리 시간을 줄이는 데 도움이 되었다면, 커피 한 잔으로 응원해 주세요.",
     kofiCta: "Ko-fi에서 커피 한 잔 사주기",
-    kofiNote: "Ko-fi 일회성 후원 · ruum은 언제나 무료 오픈소스로 유지됩니다.",
+    kofiNote: "Ko-fi 일회성 후원 · Ruum은 언제나 무료 오픈소스로 유지됩니다.",
     wechatTrigger: "",
     wechatModalTitle: "",
     wechatHint: "",
@@ -346,9 +365,9 @@ export const ko: SiteCopy = {
   },
   downloadPage: {
     eyebrow: "배포 및 무결성 검증",
-    title: "ruum 다운로드",
+    title: "Ruum 다운로드",
     subtitle:
-      "macOS, Linux, Windows용 설치 파일과 패키지 매니저, 헤드리스 서버 CLI를 SHA-256 검증과 함께 제공합니다.",
+      "macOS, Windows, Linux용 무료 디스크 용량 분석·정리 설치 파일과 패키지 매니저, 헤드리스 서버 CLI를 SHA-256 및 Sigstore 검증과 함께 제공합니다.",
     channelStable: "안정판 (Stable)",
     channelBeta: "베타판 (Beta)",
     recommendedForPrefix: "권장 다운로드 ·",
@@ -378,13 +397,13 @@ export const ko: SiteCopy = {
     platformNotesHeading: "플랫폼별 초기 설정 안내",
     macosNoteTitle: "macOS · Gatekeeper 및 전체 디스크 접근 권한",
     macosNoteBody:
-      "미서명 빌드 경고가 뜨면 `xattr -dr com.apple.quarantine /Applications/ruum.app`을 실행하세요. 휴지통과 보호된 컨테이너를 스캔하려면 시스템 설정 › 개인정보 보호 및 보안에서 전체 디스크 접근 권한을 허용하세요.",
+      "미서명 빌드 경고가 뜨면 `xattr -dr com.apple.quarantine /Applications/ruum.app`을 실행하세요. 휴지통과 보호된 컨테이너를 스캔하려면 시스템 설정 › 개인정보 보호 및 보안에서 Ruum에 전체 디스크 접근 권한을 허용하세요.",
     windowsNoteTitle: "Windows · NTFS MFT 고속 스캔",
     windowsNoteBody:
-      "C:\\ 같은 전체 NTFS 드라이브를 분석할 때 관리자 권한으로 실행하면 Master File Table(MFT)을 직접 읽어 탐색 속도가 수 배 빨라집니다.",
+      "C:\\ 같은 전체 NTFS 드라이브를 분석할 때 Ruum을 관리자 권한으로 실행하면 Master File Table(MFT)을 직접 읽어 탐색 속도가 수 배 빨라집니다.",
     linuxNoteTitle: "Linux · Wayland / X11 및 Hyprland",
     linuxNoteBody:
-      "데스크톱 GUI는 Vulkan 지원 GPU가 있는 Wayland 또는 X11 세션이 필요합니다(헤드리스 서버는 `--cli-only` 사용). Hyprland에서는 `windowrule = float, class:^(ruum)$` 설정을 권장합니다.",
+      "데스크톱 GUI는 Vulkan 지원 GPU가 있는 Wayland 또는 X11 세션이 필요합니다(헤드리스 서버는 `--cli-only` / `ruum ssh --check` 사용). Hyprland에서는 `windowrule = float, class:^(ruum)$` 설정을 권장합니다.",
     allReleasesLink: "GitHub에서 모든 릴리스 보기",
   },
   changelogPage: {
@@ -402,6 +421,7 @@ export const ko: SiteCopy = {
     viewOnGithub: "GitHub 릴리스 보기",
   },
   footer: {
+    logoAlt: "Ruum 마크",
     etymologyTitle: '왜 "Ruum"인가요?',
     etymologyBody:
       "고대 노르드어로 넓고 탁 트인 여유 공간(rúm)을 뜻하는 단어에서 유래했습니다. 쌓인 빌드 산출물과 오래된 캐시를 비워 드라이브에 숨 쉴 공간을 되돌려줍니다.",

@@ -5,14 +5,30 @@ export const ja: SiteCopy = {
   localeLabel: "日本語",
   htmlLang: "ja",
   meta: {
-    homeTitle: "ruum — AI 時代のツリーマップ容量解析・SSH 診断・Docker 整理ツール",
+    homeTitle:
+      "Ruum — 無料オープンソースのディスク容量解析・AI ディスク整理ツール (Mac / Windows / Linux)",
     homeDescription:
-      "Rust と GPUI で構築されたクロスプラットフォーム容量解析ツール。ローカル・Docker・SSH サーバーを可視化し、O(1) AI ウォッチドッグと 8 ツールの MCP サーバーで安全に空き容量を確保。",
-    downloadTitle: "ruum をダウンロード — macOS / Linux / Windows & CLI",
+      "Ruum は macOS、Windows（NTFS MFT 高速解析）、Linux 対応の無料オープンソース・ディスク容量解析 & AI ディスク整理ツール。大容量ファイル、開発キャッシュ、Docker、SSH サーバーを可視化し、MCP 連携で安全に空き容量を確保します。",
+    downloadTitle: "Ruum をダウンロード — macOS / Windows / Linux 対応無料ディスク容量解析ツール",
     downloadDescription:
-      "SHA-256 チェックサムと Sigstore 来歴証明付きの macOS・Linux・Windows 向けインストーラーとワンラインスクリプト。",
-    changelogTitle: "変更履歴 — ruum リリース",
-    changelogDescription: "macOS・Linux・Windows における ruum のリリース履歴。",
+      "SHA-256 チェックサムと Sigstore 来歴証明付きの Ruum デスクトップ版インストーラーとヘッドレス CLI（macOS Apple Silicon・Intel / Windows / Linux）を無料ダウンロード。",
+    changelogTitle: "Ruum 変更履歴 — ディスク容量解析・AI ディスク整理ツールのリリース記録",
+    changelogDescription:
+      "macOS・Windows・Linux 向けディスク容量解析・AI 整理ツール Ruum の公式リリース履歴と新機能アップデート。",
+    keywords:
+      "Ruum, ruum, ディスク容量解析, ディスク整理, 空き容量 増やす, AI ディスク整理, 大容量ファイル 検索, Mac ディスク容量, Windows ディスク解析, NTFS MFT, Linux ディスク使用量, Docker 容量整理, SSH ディスク解析, MCP ディスクツール, node_modules 削除, オープンソース, 無料",
+    ogImageAlt:
+      "Ruum — macOS・Windows・Linux 対応の無料オープンソース・ディスク容量解析 & AI ディスク整理ツール",
+    applicationSubCategory: "ディスク容量解析・AI ディスク整理ツール",
+    alternateNames: ["ruum", "Ruum ディスク容量解析", "Ruum AI ディスク整理"],
+    featureList: [
+      "macOS、Windows（管理者 NTFS MFT 直接読み取り）、Linux 対応のツリーマップ容量解析",
+      "O(1) AI ウォッチドッグ常駐と 8 ツール対応 stdio MCP サーバー（人間承認ゲート付き）",
+      "ローカルボリュームを読み取り専用ロックで完全保護する Docker 容量エクスプローラー",
+      "ハッシュ検証済み静的 musl スキャナーによる sudo 不要のリモート SSH 診断",
+      "node_modules、Xcode、Cargo ビルドキャッシュなど開発用キャッシュを斜線で即座に特定",
+      "ゴミ箱移動を標準とし OS・マウント保護とフックレス Git 検査を行う Rust 安全ガード",
+    ],
   },
   nav: {
     home: "ホーム",
@@ -25,6 +41,7 @@ export const ja: SiteCopy = {
     themeToDark: "ダークテーマ（Obsidian）へ切替",
     themeToLight: "ライトテーマ（Warm Paper）へ切替",
     menu: "メニュー",
+    logoAlt: "Ruum ロゴ",
   },
   hero: {
     eyebrowPrefix: "Rust + GPUI",
@@ -32,8 +49,8 @@ export const ja: SiteCopy = {
     headlineLine1: "すべてのドライブに、",
     headlineLine2: "確かな余白を。",
     subcopy:
-      "ローカルディスク、Docker 領域、リモート SSH サーバーの使用量を GPUI ツリーマップで即座に可視化。O(1) AI ウォッチドッグと MCP サーバーが整理案を作成し、あなたの確認後にのみ安全に実行します。",
-    primaryCta: "ruum をダウンロード",
+      "Ruum は macOS・Windows・Linux 対応の無料オープンソース・ディスク容量解析 & AI ディスク整理ツールです。大容量ファイル、開発キャッシュ、Docker、SSH サーバーを高速ツリーマップで可視化し、確認後にのみ安全に整理します。",
+    primaryCta: "Ruum をダウンロード",
     secondaryCta: "GitHub で見る",
     tourCta: "クイックスタート",
     tourHint:
@@ -53,12 +70,13 @@ export const ja: SiteCopy = {
     verifiedNote: "Ed25519 + SHA-256 検証済み",
   },
   sandbox: {
-    windowTitle: "ruum",
+    windowTitle: "Ruum",
     demoModeLabel: "Web デモ",
     screenshotModeLabel: "実機スクリーンショット",
     demoDisclaimer: "模擬データ",
     screenshotCaption:
       "macOS デスクトップアプリの実機スクリーンショットです。Web デモへ戻すと操作を試せます。",
+    screenshotAlt: "Ruum macOS ネイティブデスクトップ版ディスク容量解析の実機スクリーンショット",
     tourButton: "クイックスタート",
     rescanButton: "再スキャン",
     resetButton: "リセット",
@@ -69,7 +87,7 @@ export const ja: SiteCopy = {
       ssh: "リモート",
     },
     explore: {
-      breadcrumbRoot: "ruum / Users / dev",
+      breadcrumbRoot: "Ruum / Users / dev",
       summaryItems: "263 GiB · 4,184,346 ファイル · 63.0 秒",
       modeSize: "サイズ",
       modeAge: "更新時期",
@@ -111,7 +129,8 @@ export const ja: SiteCopy = {
         localVolumes: "ローカルボリューム",
       },
       protectedBadge: "保護済み · 読み取り専用",
-      protectedNote: "DB 等の永続ボリュームは読み取り専用にロックされ、自動削除されません。",
+      protectedNote:
+        "DB 等の永続ボリュームは読み取り専用にロックされ、Ruum によって自動削除されません。",
       sharedNotePrefix: "イメージと共有",
       candidatesTitle: "安全な整理候補",
       cleanBtn: "選択項目を整理",
@@ -265,7 +284,8 @@ export const ja: SiteCopy = {
         "親子フォルダを重複カウントしないリアルタイム空き容量予測メーター",
       ],
       legendTitle: "カテゴリ配色ガイド",
-      hatchCaption: "45° 斜線 = 再構築可能なキャッシュ、ビルド成果物、worktree、パッケージストア",
+      hatchCaption:
+        "45° 斜線 = 再生成可能な node_modules、Xcode / Cargo ビルドキャッシュ、worktree、パッケージストア",
       categories: [
         "コード",
         "Agent 一時",
@@ -336,9 +356,9 @@ export const ja: SiteCopy = {
     eyebrow: "OPEN SOURCE · GPL-3.0",
     title: "コーヒーを一杯おごる",
     description:
-      "ruum がディスクの空き容量の確保や調査時間の短縮に役立ちましたら、コーヒーを一杯おごっていただけると励みになります。",
+      "Ruum がディスクの空き容量の確保や調査時間の短縮に役立ちましたら、コーヒーを一杯おごっていただけると励みになります。",
     kofiCta: "Ko-fi でコーヒーを一杯おごる",
-    kofiNote: "Ko-fi での単発サポート · ruum は今後も完全無料・オープンソースです。",
+    kofiNote: "Ko-fi での単発サポート · Ruum は今後も完全無料・オープンソースです。",
     wechatTrigger: "",
     wechatModalTitle: "",
     wechatHint: "",
@@ -347,9 +367,9 @@ export const ja: SiteCopy = {
   },
   downloadPage: {
     eyebrow: "配布物と署名検証",
-    title: "ruum をダウンロード",
+    title: "Ruum をダウンロード",
     subtitle:
-      "macOS・Linux・Windows インストーラー、各種パッケージ、サーバー用 CLI を提供しています。",
+      "macOS・Windows・Linux 向けの無料ディスク容量解析・整理インストーラー、各種パッケージ、サーバー用 CLI を SHA-256 と Sigstore 検証付きで提供しています。",
     channelStable: "安定版 (Stable)",
     channelBeta: "ベータ版 (Beta)",
     recommendedForPrefix: "推奨インストーラー ·",
@@ -379,13 +399,13 @@ export const ja: SiteCopy = {
     platformNotesHeading: "プラットフォーム別セットアップ補足",
     macosNoteTitle: "macOS · Gatekeeper とフルディスクアクセス",
     macosNoteBody:
-      "未署名ビルドの警告が出る場合は `xattr -dr com.apple.quarantine /Applications/ruum.app` を実行してください。ゴミ箱や保護コンテナの解析には「フルディスクアクセス」の許可が必要です。",
+      "未署名ビルドの警告が出る場合は `xattr -dr com.apple.quarantine /Applications/ruum.app` を実行してください。ゴミ箱や保護コンテナの解析には「システム設定 › プライバシーとセキュリティ › フルディスクアクセス」で Ruum を許可してください。",
     windowsNoteTitle: "Windows · NTFS MFT 高速スキャン",
     windowsNoteBody:
-      "C:\\ などの NTFS ドライブ全体をスキャンする場合、管理者として起動すると Master File Table (MFT) を直接読み取り数倍高速化します。",
+      "C:\\ などの NTFS ドライブ全体をスキャンする場合、Ruum を管理者として起動すると Master File Table (MFT) を直接読み取り数倍高速化します。",
     linuxNoteTitle: "Linux · Wayland / X11 & Hyprland",
     linuxNoteBody:
-      "GUI 実行には Vulkan 対応 GPU と Wayland / X11 が必要です（ヘッドレス環境は `--cli-only` をご利用ください）。Hyprland では `windowrule = float, class:^(ruum)$` を推奨します。",
+      "GUI 実行には Vulkan 対応 GPU と Wayland / X11 が必要です（ヘッドレス環境は `--cli-only` / `ruum ssh --check` をご利用ください）。Hyprland では `windowrule = float, class:^(ruum)$` を推奨します。",
     allReleasesLink: "GitHub Releases ですべて見る",
   },
   changelogPage: {
@@ -403,6 +423,7 @@ export const ja: SiteCopy = {
     viewOnGithub: "GitHub で詳細を見る",
   },
   footer: {
+    logoAlt: "Ruum マーク",
     etymologyTitle: 'なぜ "Ruum" なのか',
     etymologyBody:
       "古ノルド語で「広々とした空間・開放された余白（rúm）」に由来。溜まったビルド成果物やキャッシュを取り除き、ドライブに本来の呼吸空間を取り戻します。",
