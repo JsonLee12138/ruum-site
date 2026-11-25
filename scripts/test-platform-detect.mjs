@@ -241,10 +241,11 @@ test("detectPlatformAsync probes WebGL on unresolved macOS and cleans up context
 
 test("pickRecommendedArtifact and pickSiblingArtifacts select primary format and arch-matched siblings", () => {
   const { macos, linux, windows } = releases.stable.downloads;
+  const version = releases.stable.tag.replace(/^v/, "");
 
   // macOS aarch64 -> .dmg primary, [.pkg, .zip] siblings
   const macPrimary = pickRecommendedArtifact(macos, "macos", "aarch64");
-  assert.equal(macPrimary?.filename, "ruum-0.2.3-aarch64-macos.dmg");
+  assert.equal(macPrimary?.filename, `ruum-${version}-aarch64-macos.dmg`);
   assert.deepEqual(
     pickSiblingArtifacts(macos, macPrimary, "aarch64").map((a) => a.format),
     [".pkg", ".zip"],
@@ -252,7 +253,7 @@ test("pickRecommendedArtifact and pickSiblingArtifacts select primary format and
 
   // macOS x86_64 -> x86_64 .dmg primary, x86_64 [.pkg, .zip] siblings
   const macIntelPrimary = pickRecommendedArtifact(macos, "macos", "x86_64");
-  assert.equal(macIntelPrimary?.filename, "ruum-0.2.3-x86_64-macos.dmg");
+  assert.equal(macIntelPrimary?.filename, `ruum-${version}-x86_64-macos.dmg`);
   assert.deepEqual(
     pickSiblingArtifacts(macos, macIntelPrimary, "x86_64").map((a) => a.arch),
     ["x86_64", "x86_64"],
