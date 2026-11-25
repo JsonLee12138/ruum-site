@@ -438,7 +438,7 @@ export const ko: SiteCopy = {
       download: "다운로드",
       changelog: "변경 로그",
       support: "후원",
-      email: "이메일 (lijunsong2@gmail.com)",
+      email: "이메일",
       discord: "Discord 커뮤니티",
     },
   },

@@ -439,7 +439,7 @@ export const en: SiteCopy = {
       download: "Download",
       changelog: "Changelog",
       support: "Sponsor",
-      email: "Email (lijunsong2@gmail.com)",
+      email: "Email",
       discord: "Discord Community",
     },
   },

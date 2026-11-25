@@ -431,7 +431,7 @@ export const zh: SiteCopy = {
       download: "下载安装",
       changelog: "更新日志",
       support: "打赏",
-      email: "邮箱 (lijunsong2@gmail.com)",
+      email: "邮箱",
       discord: "Discord 社区",
     },
   },
