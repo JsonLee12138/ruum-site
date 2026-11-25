@@ -1,71 +1,71 @@
 {
-  "generatedAt": "2026-11-20T13:49:47.073Z",
+  "generatedAt": "2026-11-25T06:35:25.641Z",
   "repo": "JsonLee12138/Ruum",
   "workerOrigin": "https://ruum-updates.jsonlee12138.com",
-  "stars": 10,
+  "stars": 11,
   "stable": {
-    "tag": "v0.2.3",
-    "name": "ruum 0.2.3",
-    "publishedAt": "2026-11-20T13:20:57Z",
+    "tag": "v0.2.4",
+    "name": "ruum 0.2.4",
+    "publishedAt": "2026-11-24T14:18:39Z",
     "prerelease": false,
-    "htmlUrl": "https://github.com/JsonLee12138/Ruum/releases/tag/v0.2.3",
-    "sha256sumsUrl": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/SHA256SUMS",
-    "homebrewCaskUrl": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum.rb",
+    "htmlUrl": "https://github.com/JsonLee12138/Ruum/releases/tag/v0.2.4",
+    "sha256sumsUrl": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/SHA256SUMS",
+    "homebrewCaskUrl": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum.rb",
     "downloads": {
       "macos": [
         {
           "arch": "aarch64",
           "format": ".dmg",
           "label": "Disk Image (.dmg)",
-          "filename": "ruum-0.2.3-aarch64-macos.dmg",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-macos.dmg",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-macos.dmg.sha256",
-          "size": 13707178
+          "filename": "ruum-0.2.4-aarch64-macos.dmg",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-macos.dmg",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-macos.dmg.sha256",
+          "size": 21497926
         },
         {
           "arch": "aarch64",
           "format": ".pkg",
           "label": "Installer (.pkg)",
-          "filename": "ruum-0.2.3-aarch64-macos.pkg",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-macos.pkg",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-macos.pkg.sha256",
-          "size": 12691760
+          "filename": "ruum-0.2.4-aarch64-macos.pkg",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-macos.pkg",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-macos.pkg.sha256",
+          "size": 20069098
         },
         {
           "arch": "aarch64",
           "format": ".zip",
           "label": "App Archive (.zip)",
-          "filename": "ruum-0.2.3-aarch64-macos.zip",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-macos.zip",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-macos.zip.sha256",
-          "size": 12688997
+          "filename": "ruum-0.2.4-aarch64-macos.zip",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-macos.zip",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-macos.zip.sha256",
+          "size": 20068015
         },
         {
           "arch": "x86_64",
           "format": ".dmg",
           "label": "Disk Image (.dmg)",
-          "filename": "ruum-0.2.3-x86_64-macos.dmg",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-macos.dmg",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-macos.dmg.sha256",
-          "size": 14918213
+          "filename": "ruum-0.2.4-x86_64-macos.dmg",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-macos.dmg",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-macos.dmg.sha256",
+          "size": 23680858
         },
         {
           "arch": "x86_64",
           "format": ".pkg",
           "label": "Installer (.pkg)",
-          "filename": "ruum-0.2.3-x86_64-macos.pkg",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-macos.pkg",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-macos.pkg.sha256",
-          "size": 13710346
+          "filename": "ruum-0.2.4-x86_64-macos.pkg",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-macos.pkg",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-macos.pkg.sha256",
+          "size": 21832964
         },
         {
           "arch": "x86_64",
           "format": ".zip",
           "label": "App Archive (.zip)",
-          "filename": "ruum-0.2.3-x86_64-macos.zip",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-macos.zip",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-macos.zip.sha256",
-          "size": 13708351
+          "filename": "ruum-0.2.4-x86_64-macos.zip",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-macos.zip",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-macos.zip.sha256",
+          "size": 21829870
         }
       ],
       "linux": [
@@ -73,73 +73,73 @@
           "arch": "aarch64",
           "format": ".deb",
           "label": "Debian / Ubuntu (.deb)",
-          "filename": "ruum-0.2.3-aarch64-linux.deb",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-linux.deb",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-linux.deb.sha256",
-          "size": 22754328
+          "filename": "ruum-0.2.4-aarch64-linux.deb",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-linux.deb",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-linux.deb.sha256",
+          "size": 30348890
         },
         {
           "arch": "aarch64",
           "format": ".rpm",
           "label": "Fedora / RHEL (.rpm)",
-          "filename": "ruum-0.2.3-aarch64-linux.rpm",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-linux.rpm",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-linux.rpm.sha256",
-          "size": 23183749
+          "filename": "ruum-0.2.4-aarch64-linux.rpm",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-linux.rpm",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-linux.rpm.sha256",
+          "size": 30942259
         },
         {
           "arch": "aarch64",
           "format": ".tar.gz",
           "label": "Portable Tarball (.tar.gz)",
-          "filename": "ruum-0.2.3-aarch64-linux.tar.gz",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-linux.tar.gz",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-linux.tar.gz.sha256",
-          "size": 21991416
+          "filename": "ruum-0.2.4-aarch64-linux.tar.gz",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-linux.tar.gz",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-linux.tar.gz.sha256",
+          "size": 29318303
         },
         {
           "arch": "aarch64",
           "format": "AppImage",
           "label": "AppImage",
-          "filename": "ruum-0.2.3-aarch64.AppImage",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64.AppImage",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64.AppImage.sha256",
-          "size": 21240328
+          "filename": "ruum-0.2.4-aarch64.AppImage",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64.AppImage",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64.AppImage.sha256",
+          "size": 27789832
         },
         {
           "arch": "x86_64",
           "format": ".deb",
           "label": "Debian / Ubuntu (.deb)",
-          "filename": "ruum-0.2.3-x86_64-linux.deb",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-linux.deb",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-linux.deb.sha256",
-          "size": 24083632
+          "filename": "ruum-0.2.4-x86_64-linux.deb",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-linux.deb",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-linux.deb.sha256",
+          "size": 32229344
         },
         {
           "arch": "x86_64",
           "format": ".rpm",
           "label": "Fedora / RHEL (.rpm)",
-          "filename": "ruum-0.2.3-x86_64-linux.rpm",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-linux.rpm",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-linux.rpm.sha256",
-          "size": 24749311
+          "filename": "ruum-0.2.4-x86_64-linux.rpm",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-linux.rpm",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-linux.rpm.sha256",
+          "size": 33127637
         },
         {
           "arch": "x86_64",
           "format": ".tar.gz",
           "label": "Portable Tarball (.tar.gz)",
-          "filename": "ruum-0.2.3-x86_64-linux.tar.gz",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-linux.tar.gz",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-linux.tar.gz.sha256",
-          "size": 23670524
+          "filename": "ruum-0.2.4-x86_64-linux.tar.gz",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-linux.tar.gz",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-linux.tar.gz.sha256",
+          "size": 31668077
         },
         {
           "arch": "x86_64",
           "format": "AppImage",
           "label": "AppImage",
-          "filename": "ruum-0.2.3-x86_64.AppImage",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64.AppImage",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64.AppImage.sha256",
-          "size": 22784504
+          "filename": "ruum-0.2.4-x86_64.AppImage",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64.AppImage",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64.AppImage.sha256",
+          "size": 29874680
         }
       ],
       "windows": [
@@ -147,122 +147,122 @@
           "arch": "aarch64",
           "format": "-setup.exe",
           "label": "Installer Wizard (.exe)",
-          "filename": "ruum-0.2.3-aarch64-windows-setup.exe",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-windows-setup.exe",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-windows-setup.exe.sha256",
-          "size": 11048513
+          "filename": "ruum-0.2.4-aarch64-windows-setup.exe",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-windows-setup.exe",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-windows-setup.exe.sha256",
+          "size": 15769066
         },
         {
           "arch": "aarch64",
           "format": ".msi",
           "label": "MSI Package (.msi)",
-          "filename": "ruum-0.2.3-aarch64-windows.msi",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-windows.msi",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-windows.msi.sha256",
-          "size": 10936320
+          "filename": "ruum-0.2.4-aarch64-windows.msi",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-windows.msi",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-windows.msi.sha256",
+          "size": 17002496
         },
         {
           "arch": "aarch64",
           "format": ".zip",
           "label": "Portable ZIP (.zip)",
-          "filename": "ruum-0.2.3-aarch64-windows.zip",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-windows.zip",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-aarch64-windows.zip.sha256",
-          "size": 13678727
+          "filename": "ruum-0.2.4-aarch64-windows.zip",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-windows.zip",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-aarch64-windows.zip.sha256",
+          "size": 21521185
         },
         {
           "arch": "x86_64",
           "format": "-setup.exe",
           "label": "Installer Wizard (.exe)",
-          "filename": "ruum-0.2.3-x86_64-windows-setup.exe",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-windows-setup.exe",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-windows-setup.exe.sha256",
-          "size": 12108221
+          "filename": "ruum-0.2.4-x86_64-windows-setup.exe",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-windows-setup.exe",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-windows-setup.exe.sha256",
+          "size": 17114612
         },
         {
           "arch": "x86_64",
           "format": ".msi",
           "label": "MSI Package (.msi)",
-          "filename": "ruum-0.2.3-x86_64-windows.msi",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-windows.msi",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-windows.msi.sha256",
-          "size": 12226560
+          "filename": "ruum-0.2.4-x86_64-windows.msi",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-windows.msi",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-windows.msi.sha256",
+          "size": 18771968
         },
         {
           "arch": "x86_64",
           "format": ".zip",
           "label": "Portable ZIP (.zip)",
-          "filename": "ruum-0.2.3-x86_64-windows.zip",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-windows.zip",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3/ruum-0.2.3-x86_64-windows.zip.sha256",
-          "size": 14775120
+          "filename": "ruum-0.2.4-x86_64-windows.zip",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-windows.zip",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4/ruum-0.2.4-x86_64-windows.zip.sha256",
+          "size": 22918081
         }
       ]
     }
   },
   "beta": {
-    "tag": "v0.2.3-beta.3",
-    "name": "ruum 0.2.3-beta.3",
-    "publishedAt": "2026-11-20T10:40:17Z",
+    "tag": "v0.2.4-beta.3",
+    "name": "ruum 0.2.4-beta.3",
+    "publishedAt": "2026-11-24T11:33:13Z",
     "prerelease": true,
-    "htmlUrl": "https://github.com/JsonLee12138/Ruum/releases/tag/v0.2.3-beta.3",
-    "sha256sumsUrl": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/SHA256SUMS",
-    "homebrewCaskUrl": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum.rb",
+    "htmlUrl": "https://github.com/JsonLee12138/Ruum/releases/tag/v0.2.4-beta.3",
+    "sha256sumsUrl": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/SHA256SUMS",
+    "homebrewCaskUrl": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum.rb",
     "downloads": {
       "macos": [
         {
           "arch": "aarch64",
           "format": ".dmg",
           "label": "Disk Image (.dmg)",
-          "filename": "ruum-0.2.3-beta.3-aarch64-macos.dmg",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-macos.dmg",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-macos.dmg.sha256",
-          "size": 13708081
+          "filename": "ruum-0.2.4-beta.3-aarch64-macos.dmg",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-macos.dmg",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-macos.dmg.sha256",
+          "size": 22331870
         },
         {
           "arch": "aarch64",
           "format": ".pkg",
           "label": "Installer (.pkg)",
-          "filename": "ruum-0.2.3-beta.3-aarch64-macos.pkg",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-macos.pkg",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-macos.pkg.sha256",
-          "size": 12692026
+          "filename": "ruum-0.2.4-beta.3-aarch64-macos.pkg",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-macos.pkg",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-macos.pkg.sha256",
+          "size": 20069028
         },
         {
           "arch": "aarch64",
           "format": ".zip",
           "label": "App Archive (.zip)",
-          "filename": "ruum-0.2.3-beta.3-aarch64-macos.zip",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-macos.zip",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-macos.zip.sha256",
-          "size": 12688948
+          "filename": "ruum-0.2.4-beta.3-aarch64-macos.zip",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-macos.zip",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-macos.zip.sha256",
+          "size": 20067864
         },
         {
           "arch": "x86_64",
           "format": ".dmg",
           "label": "Disk Image (.dmg)",
-          "filename": "ruum-0.2.3-beta.3-x86_64-macos.dmg",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-macos.dmg",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-macos.dmg.sha256",
-          "size": 14920170
+          "filename": "ruum-0.2.4-beta.3-x86_64-macos.dmg",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-macos.dmg",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-macos.dmg.sha256",
+          "size": 23681113
         },
         {
           "arch": "x86_64",
           "format": ".pkg",
           "label": "Installer (.pkg)",
-          "filename": "ruum-0.2.3-beta.3-x86_64-macos.pkg",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-macos.pkg",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-macos.pkg.sha256",
-          "size": 13709684
+          "filename": "ruum-0.2.4-beta.3-x86_64-macos.pkg",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-macos.pkg",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-macos.pkg.sha256",
+          "size": 21833435
         },
         {
           "arch": "x86_64",
           "format": ".zip",
           "label": "App Archive (.zip)",
-          "filename": "ruum-0.2.3-beta.3-x86_64-macos.zip",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-macos.zip",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-macos.zip.sha256",
-          "size": 13707882
+          "filename": "ruum-0.2.4-beta.3-x86_64-macos.zip",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-macos.zip",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-macos.zip.sha256",
+          "size": 21830420
         }
       ],
       "linux": [
@@ -270,73 +270,73 @@
           "arch": "aarch64",
           "format": ".deb",
           "label": "Debian / Ubuntu (.deb)",
-          "filename": "ruum-0.2.3-beta.3-aarch64-linux.deb",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-linux.deb",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-linux.deb.sha256",
-          "size": 22754890
+          "filename": "ruum-0.2.4-beta.3-aarch64-linux.deb",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-linux.deb",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-linux.deb.sha256",
+          "size": 30345138
         },
         {
           "arch": "aarch64",
           "format": ".rpm",
           "label": "Fedora / RHEL (.rpm)",
-          "filename": "ruum-0.2.3-beta.3-aarch64-linux.rpm",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-linux.rpm",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-linux.rpm.sha256",
-          "size": 23190583
+          "filename": "ruum-0.2.4-beta.3-aarch64-linux.rpm",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-linux.rpm",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-linux.rpm.sha256",
+          "size": 30910122
         },
         {
           "arch": "aarch64",
           "format": ".tar.gz",
           "label": "Portable Tarball (.tar.gz)",
-          "filename": "ruum-0.2.3-beta.3-aarch64-linux.tar.gz",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-linux.tar.gz",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-linux.tar.gz.sha256",
-          "size": 21993001
+          "filename": "ruum-0.2.4-beta.3-aarch64-linux.tar.gz",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-linux.tar.gz",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-linux.tar.gz.sha256",
+          "size": 29318891
         },
         {
           "arch": "aarch64",
           "format": "AppImage",
           "label": "AppImage",
-          "filename": "ruum-0.2.3-beta.3-aarch64.AppImage",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64.AppImage",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64.AppImage.sha256",
-          "size": 21256712
+          "filename": "ruum-0.2.4-beta.3-aarch64.AppImage",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64.AppImage",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64.AppImage.sha256",
+          "size": 27773448
         },
         {
           "arch": "x86_64",
           "format": ".deb",
           "label": "Debian / Ubuntu (.deb)",
-          "filename": "ruum-0.2.3-beta.3-x86_64-linux.deb",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-linux.deb",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-linux.deb.sha256",
-          "size": 24084212
+          "filename": "ruum-0.2.4-beta.3-x86_64-linux.deb",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-linux.deb",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-linux.deb.sha256",
+          "size": 32227652
         },
         {
           "arch": "x86_64",
           "format": ".rpm",
           "label": "Fedora / RHEL (.rpm)",
-          "filename": "ruum-0.2.3-beta.3-x86_64-linux.rpm",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-linux.rpm",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-linux.rpm.sha256",
-          "size": 24752210
+          "filename": "ruum-0.2.4-beta.3-x86_64-linux.rpm",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-linux.rpm",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-linux.rpm.sha256",
+          "size": 33141722
         },
         {
           "arch": "x86_64",
           "format": ".tar.gz",
           "label": "Portable Tarball (.tar.gz)",
-          "filename": "ruum-0.2.3-beta.3-x86_64-linux.tar.gz",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-linux.tar.gz",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-linux.tar.gz.sha256",
-          "size": 23671581
+          "filename": "ruum-0.2.4-beta.3-x86_64-linux.tar.gz",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-linux.tar.gz",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-linux.tar.gz.sha256",
+          "size": 31670874
         },
         {
           "arch": "x86_64",
           "format": "AppImage",
           "label": "AppImage",
-          "filename": "ruum-0.2.3-beta.3-x86_64.AppImage",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64.AppImage",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64.AppImage.sha256",
-          "size": 22784504
+          "filename": "ruum-0.2.4-beta.3-x86_64.AppImage",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64.AppImage",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64.AppImage.sha256",
+          "size": 29874680
         }
       ],
       "windows": [
@@ -344,60 +344,129 @@
           "arch": "aarch64",
           "format": "-setup.exe",
           "label": "Installer Wizard (.exe)",
-          "filename": "ruum-0.2.3-beta.3-aarch64-windows-setup.exe",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-windows-setup.exe",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-windows-setup.exe.sha256",
-          "size": 11048383
+          "filename": "ruum-0.2.4-beta.3-aarch64-windows-setup.exe",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-windows-setup.exe",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-windows-setup.exe.sha256",
+          "size": 15769242
         },
         {
           "arch": "aarch64",
           "format": ".msi",
           "label": "MSI Package (.msi)",
-          "filename": "ruum-0.2.3-beta.3-aarch64-windows.msi",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-windows.msi",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-windows.msi.sha256",
-          "size": 10936320
+          "filename": "ruum-0.2.4-beta.3-aarch64-windows.msi",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-windows.msi",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-windows.msi.sha256",
+          "size": 17006592
         },
         {
           "arch": "aarch64",
           "format": ".zip",
           "label": "Portable ZIP (.zip)",
-          "filename": "ruum-0.2.3-beta.3-aarch64-windows.zip",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-windows.zip",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-aarch64-windows.zip.sha256",
-          "size": 13679087
+          "filename": "ruum-0.2.4-beta.3-aarch64-windows.zip",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-windows.zip",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-aarch64-windows.zip.sha256",
+          "size": 21520888
         },
         {
           "arch": "x86_64",
           "format": "-setup.exe",
           "label": "Installer Wizard (.exe)",
-          "filename": "ruum-0.2.3-beta.3-x86_64-windows-setup.exe",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-windows-setup.exe",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-windows-setup.exe.sha256",
-          "size": 12110352
+          "filename": "ruum-0.2.4-beta.3-x86_64-windows-setup.exe",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-windows-setup.exe",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-windows-setup.exe.sha256",
+          "size": 17114656
         },
         {
           "arch": "x86_64",
           "format": ".msi",
           "label": "MSI Package (.msi)",
-          "filename": "ruum-0.2.3-beta.3-x86_64-windows.msi",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-windows.msi",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-windows.msi.sha256",
-          "size": 12222464
+          "filename": "ruum-0.2.4-beta.3-x86_64-windows.msi",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-windows.msi",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-windows.msi.sha256",
+          "size": 18776064
         },
         {
           "arch": "x86_64",
           "format": ".zip",
           "label": "Portable ZIP (.zip)",
-          "filename": "ruum-0.2.3-beta.3-x86_64-windows.zip",
-          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-windows.zip",
-          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.3-beta.3/ruum-0.2.3-beta.3-x86_64-windows.zip.sha256",
-          "size": 14775198
+          "filename": "ruum-0.2.4-beta.3-x86_64-windows.zip",
+          "url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-windows.zip",
+          "sha256Url": "https://github.com/JsonLee12138/Ruum/releases/download/v0.2.4-beta.3/ruum-0.2.4-beta.3-x86_64-windows.zip.sha256",
+          "size": 22917768
         }
       ]
     }
   },
   "changelog": [
+    {
+      "version": "0.2.4",
+      "tag": "v0.2.4",
+      "date": "2026-11-24",
+      "prerelease": false,
+      "releaseUrl": "https://github.com/JsonLee12138/Ruum/releases/tag/v0.2.4",
+      "sections": {
+        "features": [
+          "**adk,core,app,cli:** Add reusable `ruum-adk` direct AI API crate (`OpenAI` & `Anthropic`/Claude protocols with pure `rustls`, custom `base_url` normalization, `/models` discovery, multi-turn `LlmAgent` tool loop, and sync `BlockingAdkClient`) alongside `AiBackendFactory` / `DirectApiAiAdapter` and an in-process 6-tool read-only local MCP bridge (`list_volumes`, `scan_directory`, `inspect_subtree`, `find_reclaimable`, `check_git_safety`, `plan_removal`).",
+          "**app,cli,core:** Add `API` provider support in **Settings › AI** (`OpenAI` / `Claude` protocol selector, `Base URL`, masked `API Key` stored lazily in `ruum.ai` keychain, draft connection test / model listing / latency benchmark across `en`/`zh`/`ja`/`ko`) and extend `ruum config ai get/set` with `--provider api`, `--api-protocol`, `--api-base-url`, `--api-key`, `--api-key-stdin`, and redacted output.",
+          "**app,core,watchdog:** Add native background mode (`ruum-gui --background`) and tri-platform login autostart (`SMAppService` / `LaunchAgents` on macOS, XDG `.desktop` on Linux, `HKCU\\...\\Run` on Windows), allowing the app to hide Dock/taskbar entries when windows close while keeping the system tray active.",
+          "**app:** Add tri-platform system tray / menu-bar disk-space gauge (`TrayGaugeAdapter` with Retina capsule + menu-bar title on macOS, taskbar theme-adaptive icon on Windows, and dual-contrast badge + panel title on Linux).",
+          "**app,core,watchdog:** Add AI failure desktop notifications, an in-app cleanup progress modal, expanded Docker cleanup adapters, and a redesigned Home layout."
+        ],
+        "fixes": [
+          "**xtask:** Extend macOS `hdiutil` retry backoff up to 31s to prevent transient `.dmg` creation locks during releases.",
+          "**ci,release,xtask:** Slim `xtask` dependencies (`service` feature disabled), optimize dev/CI caching and glibc isolation for Linux portable builds, migrate macOS `x86_64` releases to `macos-15` cross-compilation with Rosetta 2 verification, omit `.wixpdb`, and parallelize R2 release uploads."
+        ],
+        "improvements": [
+          "**readme:** Add sponsor links and GitHub `FUNDING.yml` across `en`/`zh`/`ja`/`ko` READMEs."
+        ]
+      }
+    },
+    {
+      "version": "0.2.4-beta.3",
+      "tag": "v0.2.4-beta.3",
+      "date": "2026-11-24",
+      "prerelease": true,
+      "releaseUrl": "https://github.com/JsonLee12138/Ruum/releases/tag/v0.2.4-beta.3",
+      "sections": {
+        "features": [],
+        "fixes": [],
+        "improvements": [
+          "**ci,release,xtask:** Slim `xtask`, fix CI cache eviction, add Windows release icon checks, migrate macOS `x86_64` releases to `macos-15` cross-compilation (`--target` in `cargo xtask bundle`), omit `.wixpdb`, and parallelize R2 uploads.",
+          "**readme:** Add sponsor links and GitHub `FUNDING.yml` across `en`/`zh`/`ja`/`ko` READMEs."
+        ]
+      }
+    },
+    {
+      "version": "0.2.4-beta.2",
+      "tag": "v0.2.4-beta.2",
+      "date": "2026-11-24",
+      "prerelease": true,
+      "releaseUrl": "https://github.com/JsonLee12138/Ruum/releases/tag/v0.2.4-beta.2",
+      "sections": {
+        "features": [
+          "**app,core,watchdog:** Add AI failure notifications, cleanup progress modal, native background mode (`--background`) with tri-platform login autostart, system tray / menu-bar disk-space gauge, Docker cleanup improvements, and Home layout overhaul."
+        ],
+        "fixes": [],
+        "improvements": []
+      }
+    },
+    {
+      "version": "0.2.4-beta.1",
+      "tag": "v0.2.4-beta.1",
+      "date": "2026-11-23",
+      "prerelease": true,
+      "releaseUrl": "https://github.com/JsonLee12138/Ruum/releases/tag/v0.2.4-beta.1",
+      "sections": {
+        "features": [
+          "**adk,core:** Add reusable `ruum-adk` direct AI API crate (`OpenAI` & `Anthropic`/Claude protocols with pure `rustls`, custom `base_url` normalization, `/models` discovery, multi-turn `LlmAgent` tool loop, and sync `BlockingAdkClient`) alongside `AiBackendFactory` / `DirectApiAiAdapter` and an in-process 6-tool read-only local MCP bridge (`list_volumes`, `scan_directory`, `inspect_subtree`, `find_reclaimable`, `check_git_safety`, `plan_removal`).",
+          "**app,cli,core:** Add `API` provider support in **Settings › AI** (`OpenAI` / `Claude` protocol selector, `Base URL`, masked `API Key` stored lazily in `ruum.ai` keychain, draft connection test / model listing / latency benchmark across `en`/`zh`/`ja`/`ko`) and extend `ruum config ai get/set` with `--provider api`, `--api-protocol`, `--api-base-url`, `--api-key`, `--api-key-stdin`, and redacted output."
+        ],
+        "fixes": [
+          "**xtask:** Extend macOS `hdiutil` retry backoff up to 31s to prevent transient `.dmg` creation locks during releases."
+        ],
+        "improvements": []
+      }
+    },
     {
       "version": "0.2.3",
       "tag": "v0.2.3",
