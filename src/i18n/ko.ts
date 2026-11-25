@@ -429,6 +429,7 @@ export const ko: SiteCopy = {
     groups: {
       product: "제품",
       community: "오픈소스",
+      contact: "연락처",
     },
     links: {
       github: "GitHub",
@@ -437,6 +438,8 @@ export const ko: SiteCopy = {
       download: "다운로드",
       changelog: "변경 로그",
       support: "후원",
+      email: "이메일 (lijunsong2@gmail.com)",
+      discord: "Discord 커뮤니티",
     },
   },
 };

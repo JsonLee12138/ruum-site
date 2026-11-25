@@ -291,6 +291,7 @@ export interface SiteCopy {
     groups: {
       product: string;
       community: string;
+      contact: string;
     };
     links: {
       github: string;
@@ -299,6 +300,8 @@ export interface SiteCopy {
       download: string;
       changelog: string;
       support: string;
+      email: string;
+      discord: string;
     };
   };
 }

@@ -422,6 +422,7 @@ export const zh: SiteCopy = {
     groups: {
       product: "产品",
       community: "开源社区",
+      contact: "联系",
     },
     links: {
       github: "GitHub",
@@ -430,6 +431,8 @@ export const zh: SiteCopy = {
       download: "下载安装",
       changelog: "更新日志",
       support: "打赏",
+      email: "邮箱 (lijunsong2@gmail.com)",
+      discord: "Discord 社区",
     },
   },
 };

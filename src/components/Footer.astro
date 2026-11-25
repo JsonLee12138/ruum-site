@@ -27,11 +27,16 @@ const communityLinks = [
   { label: copy.footer.links.issues, href: 'https://github.com/JsonLee12138/Ruum/issues', external: true },
   { label: copy.footer.links.support, href: supportHref, external: false },
 ];
+
+const contactLinks = [
+  { label: copy.footer.links.email, href: 'mailto:lijunsong2@gmail.com', external: false },
+  { label: copy.footer.links.discord, href: 'https://discord.com/invite/666U6JTCQY', external: true },
+];
 ---
 
 <footer class="border-t border-hairline bg-surface">
   <div class="mx-auto max-w-[1200px] px-4 py-12 sm:px-6">
-    <div class="grid gap-10 md:grid-cols-[1.35fr_1fr]">
+    <div class="grid gap-10 md:grid-cols-[1.2fr_1.3fr]">
       <div class="space-y-3">
         <div class="flex items-center gap-2.5">
           <img src="/ruum.svg" alt={copy.footer.logoAlt} width="22" height="22" class="h-[22px] w-[22px] rounded-[3px]" />
@@ -42,7 +47,7 @@ const communityLinks = [
         </p>
       </div>
 
-      <div class="grid grid-cols-2 gap-8 sm:gap-12">
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-10">
         <nav aria-label={copy.footer.groups.product}>
           <h3 class="text-[12px] font-semibold uppercase tracking-[0.06em] text-ink m-0 mb-3">
             {copy.footer.groups.product}
@@ -67,6 +72,28 @@ const communityLinks = [
           <ul class="m-0 list-none p-0 space-y-2.5 text-[13px] text-ink-secondary">
             {
               communityLinks.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noopener noreferrer' : undefined}
+                    class="no-underline text-inherit hover:text-ink transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+
+        <nav aria-label={copy.footer.groups.contact}>
+          <h3 class="text-[12px] font-semibold uppercase tracking-[0.06em] text-ink m-0 mb-3">
+            {copy.footer.groups.contact}
+          </h3>
+          <ul class="m-0 list-none p-0 space-y-2.5 text-[13px] text-ink-secondary">
+            {
+              contactLinks.map((item) => (
                 <li>
                   <a
                     href={item.href}

@@ -431,6 +431,7 @@ export const ja: SiteCopy = {
     groups: {
       product: "プロダクト",
       community: "オープンソース",
+      contact: "お問い合わせ",
     },
     links: {
       github: "GitHub",
@@ -439,6 +440,8 @@ export const ja: SiteCopy = {
       download: "ダウンロード",
       changelog: "変更履歴",
       support: "支援",
+      email: "メール (lijunsong2@gmail.com)",
+      discord: "Discord コミュニティ",
     },
   },
 };

@@ -430,6 +430,7 @@ export const en: SiteCopy = {
     groups: {
       product: "Product",
       community: "Open Source",
+      contact: "Contact",
     },
     links: {
       github: "GitHub",
@@ -438,6 +439,8 @@ export const en: SiteCopy = {
       download: "Download",
       changelog: "Changelog",
       support: "Sponsor",
+      email: "Email (lijunsong2@gmail.com)",
+      discord: "Discord Community",
     },
   },
 };
